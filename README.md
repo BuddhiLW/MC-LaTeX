@@ -1,4 +1,4 @@
-# MC-LaTeX
+# Repositório de Materiais Acadêmicos, EEL-USP.
 LabEEL - EEL-USP
 
 Autor(es)[09/01/2019]: Pedro Gomes Braquinho;
