@@ -1,0 +1,207 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Marco"
+%%% End:
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\documentclass{standalone}
+
+\usepackage{pgfgantt}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{fontspec}
+%\setmainfont{QTChanceryType}
+%\usepackage[scaled=4pt]{helvet}
+% \usepackage{lmodern}
+\usepackage[familydefault,light]{Chivo} %% Option 'familydefault' only
+                                        %% if the base font of the
+                                        %% document is to be sans
+                                        %% serif
+%\usepackage{courier}
+\normalfont % in case the EC fonts aren't available
+\usepackage[T1]{fontenc}
+
+% \usepackage[margin=4cm, scale=1, centering,]{geometry} % to
+% change margins
+\usepackage[total={8.75 in,8.75 in},
+top=2.7in, left=1in]{geometry}
+\usepackage{pdflscape} % provides the landscape environment
+\usepackage{lscape}
+\usepackage{ragged2e} % provides \RaggedLeft
+
+\parskip=2pt\parindent 0pt
+
+
+\definecolor{orchid}{RGB}{218, 112, 214}
+\definecolor{purple1}{RGB}{144, 5, 133}
+\definecolor{orange1}{RGB}{255, 165, 0}
+
+\definecolor{brisa1}{RGB}{150, 150, 150}
+\definecolor{brisa2}{RGB}{128, 128, 128}
+
+\definecolor{mesa1}{RGB}{188,218,221}
+\definecolor{mesa2}{RGB}{250, 250, 250}
+
+\definecolor{louça1}{RGB}{138, 234, 145}
+\definecolor{louça2}{RGB}{192,192,192}
+
+\definecolor{sid1}{RGB}{255, 127, 0}
+\definecolor{sid2}{RGB}{0, 128, 255}
+
+\definecolor{branqs1}{RGB}{19, 221, 120}
+\definecolor{branqs2}{RGB}{20, 222, 222}
+
+
+\newenvironment{myfont}{\fontfamily{pnc}\selectfont}{\par}
+\newenvironment{myfont2}{\fontfamily{qhv}\selectfont}{\par}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+
+\begin{landscape}
+
+  \thispagestyle{empty}
+  \begin{center}
+
+    \begin{figure}[!bth]
+
+      \begin{center}
+
+        \begin{ganttchart}[
+          vgrid={*{3}{black!55, thick, dashed}, *{1}{purple, thick}},
+          hgrid={1*{grey}},
+          title/.append style=%
+          {fill=blue!12, rounded corners=0.4mm, drop shadow},
+          title label font=\color{black!70}\bfseries,
+          title height=0.8,
+          title top shift=0.2,
+          % title left shift=0.2,
+          % title right shift=-0.1,
+          chart element start border=right]
+          {1}{30}
+          \gantttitle[title/.style={draw=black,
+            fill=white}]{\LARGE{\textbf{\fontfamily{put}\selectfont Junho}}}{30} \\
+
+          % Numbering title
+          \begin{myfont2}
+          \gantttitle{Sem. 1}{7} \gantttitle{Sem. 2}{7}{14}
+          \gantttitle{Sem. 3}{7}{14} \gantttitle{Sem. 4}{7}{14}
+          \gantttitle{Sem.5}{2}{4} \\
+          \end{myfont2}
+          \begin{myfont}
+          \gantttitlelist{1,...,30}{1} \\[grid]
+          \end{myfont}
+          %%%%%%%%%%%%%%%
+          %%%%%%%%%%%%%%%
+
+          % \ganttgroup[group/.style={draw=black, outer
+          % color=branqs1, inner
+          % color=branqs2!50}]{{\textsc{{Completo}}}}{0}{34} \\
+          +++
+          \ganttgroup[group/.style={draw=black, outer
+            color=branqs1!10, inner
+            color=branqs2!50}]{{\Large{\textsc{{Andamento}}}}}{0}{30} \\
+
+          %\ganttbar[bar/.style={draw=black, outer
+          %  color=red!70, inner color=red!60}]{Quarentena}{20}{34}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=red!70, inner color=red!60}]{{Inscrição}}{0}{4}
+          \ganttnewline[thick, black]
+
+
+          %%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%
+
+          %%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%
+
+          %%% PRIMEIRA AULA %%%%%%%
+          \ganttgroup{\large{Material 1}}{4}{13} \\
+          \ganttbar[bar/.style={draw=black, outer
+            color=orange!50, inner color=orange!50}]{{\large{\textbf{Aula 1}}}}{4}{8}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=green!50, inner color=green!35}]{{Dúvidas (Meet) 1}}{8}{10}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=cyan!30, inner color=cyan!30}]{{Entr. de
+              Exerc. 1}}{5}{13} \\
+
+          %%% Relatório da primeira aula %%%%%%%%%
+          \ganttbar[bar/.style={draw=black!80, outer
+            color=black!80, inner color=black!70}]{{Relat. Aula
+              1}}{4}{13} \ganttnewline[thick, black]
+
+
+         %%%%%%%%%%%%%   SEGUNDA AULA %%%%%%%%%%%%%%%
+          \ganttgroup{\large{Material 2}}{9}{17} \\
+          \ganttbar[bar/.style={draw=black, outer
+            color=orange!50, inner color=orange!50}]{{\large{\textbf{Aula 2}}}}{8}{12}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=green!50, inner color=green!35}]{{Dúvidas (Meet)
+              1}}{12}{14}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=cyan!30, inner color=cyan!30}]{{Entr. de
+              Exercíc. 2}}{9}{17} \\
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+          %%% Relatório da Aula 2 %%%%%%%%%
+          \ganttbar[bar/.style={draw=black!80, outer
+            color=black!75, inner color=black!68}]{{Relat. Aula 2}}{8}{17}\ganttnewline[thick, black]
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+          %%%%%%%%%%%%% TERCEIRA AULA %%%%%%%%%%%%%%%
+          \ganttgroup{\large{Material 3}}{12}{21} \\
+          \ganttbar[bar/.style={draw=black, outer
+            color=orange!50, inner color=orange!50}]{{\large{\textbf{Aula 3}}
+              }}{12}{16}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=green!50, inner color=green!35}]{{Dúvidas (Meet)
+              1}}{16}{18}\\
+
+          \ganttbar[bar/.style={draw=black, outer
+            color=cyan!30, inner color=cyan!30}]{{Entr. de
+              Exercíc. 3}}{13}{21} \\
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+          %%% Relatório da Aula 3 %%%%%%%%%
+          \ganttbar[bar/.style={draw=black!80, outer
+            color=black!75, inner color=black!68}]{{Relat. Aula
+              3}}{12}{21} \ganttnewline[thick, black]
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+          %%%%%%%%%%%%%% Relatório Final %%%%%%%%%%%%
+          \ganttbar[bar/.style={draw=black!80, outer
+            color=purple!75, inner color=purple!68}]{{\textbf{\Large{Relat. Final}}}}{21}{30}
+
+          %%%%%%%%%%%%%%%%%%%%
+
+          %%%%%%%%%%%%%%%
+          %%%%%%%%%%%%%%%
+        \end{ganttchart}
+      \end{center}
+    \end{figure}
+  \end{center}
+
+\end{landscape}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

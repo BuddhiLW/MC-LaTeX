@@ -1,0 +1,529 @@
+%% abtex2-modelo-relatorio-tecnico.tex, v-1.9.7 laurocesar
+%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-relatorio-tecnico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Relatório Técnico/Acadêmico em conformidade com
+% ABNT NBR 10719:2015 Informação e documentação - Relatório técnico e/ou
+% científico - Apresentação
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel.
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+
+% ---
+% Pacotes adicionais, usados no anexo do modelo de folha de identificação
+% ---
+%\usepackage{multicol}
+%\usepackage{multirow}
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+
+% ---
+% CONFIGURAÇÕES DE PACOTES
+% ---
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Minicurso de \LaTeX}
+\autor{Aluno: Pedro G. Branquinho \\ Orientadora: Katia Cristiane
+  Gandolpho Candioto}
+\local{Lorena, São Paulo}
+\data{13 de Fevereiro de 2020}
+\instituicao{%
+  Universidade de São Paulo - USP \\
+  Escola de Engenharia de Loreena
+  \par
+  LabEEL - DEMAR
+  \par
+  Projeto de Bolsa PUB}
+\tipotrabalho{Relatório técnico}
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da instituição e a área de concentração
+%\preambulo{Relato da elaboração e progresso do minicurso de \LaTeX}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico},
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% ---
+
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+
+% ---
+% Agradecimentos
+% ---
+% \begin{agradecimentos}
+% O agradecimento principal é direcionado a Youssef Cherem, autor do
+% \nameref{formulado-identificacao} (\autopageref{formulado-identificacao}).
+
+% Os agradecimentos especiais são direcionados ao Centro de Pesquisa em
+% Arquitetura da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
+% Brasília (CPAI), ao grupo de usuários
+% \emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
+% novos voluntários do grupo
+% \emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
+% \url{http://www.abntex.net.br/}}~que contribuíram e que ainda
+% contribuirão para a evolução do abn\TeX.
+
+% \end{agradecimentos}
+% ---
+
+% ---
+% RESUMO
+% ---
+
+% resumo na língua vernácula (obrigatório)
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+Com o intuito de capacitar os alunos da instituição EEL-USP a
+utilizarem da ferramenta \LaTeX para tipografia, propôs-se um programa
+de ensino, em formato de minicurso, com uso de apostila didática. O
+\LaTeX, é uma linguagem markdown de formatação de documentos. E se especializa em reproduzir trabalhos científicos, bem
+como ser fiemente reprodutível, quanto a seus documentos. O curso focará no
+ensino da ferramenta, com pacotes específicos para formatação em
+acordo com as normas ABNT, e os modelos canônicos do pacote. Também,
+serão ministradas aulas sobre a formatação de apresentações, e posters.
+
+ \noindent
+ \textbf{Palavras-chaves}: minicurso. latex. modelos canônicos ABNT.
+\end{resumo}
+% ---
+
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\chapter[Introdução]{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
+
+O \LaTeX, um sistema de produção textual computacional, surgiu para
+sistematizar toda a tipografia de documentos por meio digital. É
+reconhecido, largamente, em formatação de linguagem matemática, e
+produção documental científicas; docucumentos multilinguísticos; e,
+especialmente, produções longas e complexas, como teses
+\cite{ignat2005}
+
+Por meio de uma sistematização localizada, por via de códigos, há uma
+regularidade, previsibilidade, e reproduvidade superior em relação a
+programas do tipo WYSIWYG, ``What You See Is What You Get'' - o que se
+visualiza é o que se reproduz. Um exemplo desse paradigma é o software
+Word, o qual é propriedade privada da Microsoft.
+
+Além do mais, por ser um programa amplamente desenvolvido pela
+comunidade como linguagem open source, ganha-se qualidade na
+reutilização e evolução linguística dos usuários-desenvolvedores
+\cite{goossens1994}. Pois, um arquivo, template, pacote, ou classe,
+pode ser reutilizado, uma vez criado, para a resolução de problemas
+recorrentes à comunidade. Desta forma, advém pacotes coo o abnTeX,
+desenvolvido pela equipe \abnTeX, CPAI - UnB, no Centro de Pesquisa em
+Arquitetura de Informação. O pacote se compraz de ferramentas, e
+modelos canônicos feitos estritamente sob às normas ABNT, os quais
+podem ser utilizados e adaptados a todas intituições brasileiras que
+siga as normas.
+
+
+\section{Objetivo}
+
+Por meio de minicurso profissionalizante, objetiva-se eninar alunos da
+EEL-USP a usarem a linguagem markup, \LaTeX. Pela utilização de
+pacotes de formatação abnTeX2, o aluno precisa apenas focar no texto,
+e material da pesquisa - pois a formatação é automática. Assim,
+aumenta-se as chances de melhorar a qualidade de produção de trabalhos
+acadêmicos, que é base da filosofia da linguagem.
+
+O objetivo do projeto é de ministrar quatro aulas de um minicurso de
+\LaTeX, para alunos de gradução da EEL, explanando sobre a filosofia,
+metodologia, e técnicas de produção de relatórios, teses, artigos, e
+cartazes gráficos, como posters.
+
+\chapter{Revisão Bibliográfica}
+
+\section{O \LaTeX}
+
+\LaTeX foca em separa a formatação do texto de seu conteúdo. Desta
+forma, o usuário concetra-se exclusivamente em seu conteúdo, em um
+estágio. E, na formatação de sua aparência, em outro. Assim, ganha-se
+qualidade de produção. Bem como total autonomia sob o documento, pois
+a programação da disposição do documento depende apenas do usuário, e
+pode ser indefinidamente estenso. O sistema tipográfico de \LaTeX - o
+\TeX - já chegou a ser considerado o sistema digital de
+tipografia mais sofisiticado que existe \cite{haralambous2007}.
+
+O \LaTeX, tecnicamente, é a junção do sistema de tipografia \TeX,
+inventado por Donald Knuth, para tipografia de alto nível
+\cite{knuth1986}; com os poderosos macros que facilitam a estensão do programa \TeX, a qual damos o nome de
+\LaTeX. O \LaTeX foi iniciamente desenvolvido por Leslie Lamport, com
+seus pacotes fundamentais de formatação \cite{lamport1994} O \LaTeX,
+por conseguinte, não é somente uma linguagem de tipografia de alto
+nível, mas também um conjunto de macros para facilitar a tipografia em
+si. Qualifica-se, assim, como um sistema de preparação de documentos;
+uma linguagem markup de domínio específico.
+
+\section{Classe Canônica ABNT de produção científica}
+
+Documentos sob os requisitos das normas ABNT (Associação Brasileira de Normas
+Técnicas) para elaboração de documentos técnicos e cintíficos
+brasileiros, como artigos científicos, relatórios técnicos trabalgos
+acadêmicos como teses, dissertações, projetos de pesquisa e outros
+documentos do gênero \cite{abntex2012} é ao que se chama classe
+canônica ABNT.
+
+\begin{citacao}
+Os documentos indicados tratam-se de “Modelos Canônicos”, ou seja,
+de modelos que não são específicos a nenhuma universidade ou instituição, mas
+que implementam exclusivamente os requisitos das normas da ABNT, Associação
+Brasileira de Normas Técnicas. \cite[Cap. 1]{araujoclasse}
+\end{citacao}
+
+As normas as quais prescrevem o modelo canônico são:
+
+\begin{itemize}
+  \item \textbf{ABNT NBR 6022:2018:} Informação e documentação -
+    Artigo em publicação periódica científica - Apresentação.
+  \item \textbf{ABNT NBR 6023:2002:} Informação e documentação -
+    Referência - Elaboração
+  \item \textbf{ABNT NBR 6024:2012:} Informação e documentação -
+    Numeração progressiva das seções de um documento - Apresentação
+  \item \textbf{ABNT NBR 6027:2012:} Informação e documentação -
+    Sumário - Apresentação
+  \item \textbf{ABNT NBR 6028:2003:} Informação e documentação -
+    Resumo - Apresentação
+    \item \textbf{ABNT NBR 6029:2006:} Informação e documentação -
+      Livros e folhetos - Apresentação
+    \item \textbf{ABNT NBR 6034:2004:} Informação e documentação -
+      Índice - Apresentação
+    \item \textbf{ABNT NBR 10520:2002:} Informação e documentação -
+      Citações
+    \item \textbf{ABNT NBR 10719:2015:} Informação e documentação -
+      Relatórios técnicos e/ou científico - Apresentação
+    \item \textbf{ABNT NBR 14724:2011:} Informação e documentação -
+      Trabalhos acadêmicos - Apresentação
+    \item \textbf{ABNT NBR 15287:2011:} Informação e documentação -
+      Projeto de pesquisa - Aprensetação
+\end{itemize}
+
+\section{abnTeX}
+
+O pacote abnTeX foi criado para suprir as necessidades de
+formataçõese, em padrão ABNT. E, por conseguinte, auxiliar o aumento
+do nível de produção nacional. De acordo com o autor,
+
+\begin{citacao}
+Dentre as características de qualidade de trabalhos acadêmicos (teses, dissertações e
+outros do gênero), de artigos científicos, de relatórios técnicos e de livros e folhetos,
+ao lado da pertinência do tema e dos aspectos relativos ao conteúdo abordado no
+trabalho, consta também o resultado da editoração final e as características de
+forma e de estruturação dos documentos. Desse modo, a existência de um modelo
+e de ferramentas que atendam às normas brasileiras de elaboração de trabalhos
+acadêmicos, artigos científicos e relatórios técnicos propostas pela Associação
+Brasileira de Normas Técnicas (ABNT) são recursos básicos para o aprimoramento
+da qualidade geral dos trabalhos acadêmicos nacionais.
+
+É com esse intuito que o abn\TeX2 é apresentado à comunidade acadêmica brasileira:
+o de ser um instrumento de aperfeiçoamento da qualidade dos textos produzidos.
+O abnTEX2 surge para se somar ao já vasto universo de ferramentas LATEX, porém
+que é escasso em utilitários específicos para trabalhos brasileiros. \cite[2.1]{araujoclasse}
+\end{citacao}
+
+O pacote, para se tornar parte do corpo oficial de pacotes \LaTeX, foi
+desenvolvido desde 2001, até 2013. E, hoje, é mantida pela comunidade
+de software livre. Seu acesso à atual distribuição oficial pode ser
+feita em \url{https://www.ctan.org/pkg/abntex2}. CTAN - Comprehensive TEX Archive Network - é o site
+repositório dos pacotes ``oficiais'' do \LaTeX.
+
+\section{Beamer}
+
+Desenvolvido pela comunidade, Beamer não é a primeira, porém, o mais
+utilizado pacote para produção de slides e apresentações. Seus
+desenvolvedores, inciais, foram Louis Stuart, Till Tantau, Joseph
+Wright, e Vedran Miletc \cite{tantau2010}. Por mais que estes sejam os principais
+desenvolvedores, Beamer é um pacote livre e aberto, como o \LaTeX, em
+si. Isto é, toda a comunidade usuária é também desenvolvedora do
+pacote. Desta forma, é um pacote extensivamente trabalhado para
+produção de apresentações, diponível em diversas formatações
+canônicas.
+
+\section{}
+
+ \cite{baramidze2014} \cite{hwang1995}.
+
+\chapter{Materiais e Métodos}
+
+Para a preparação do curso, usou os seguintes perseguiu-se as
+seguintes etapas,
+
+\begin{enumerate}
+\item Determinação da sala das aulas - sediação;
+\item A disponibilidade de vagas para alunos;
+\item Datas;
+\item Seleção de tópicos que devem ser lecionados sobre a ferramenta
+  \LaTeX;
+\item Quais métodos, e datas, seriam empregados para divulgação do minicurso.
+\end{enumerate}
+
+\section{Sediação}
+O curso foi idealizado para até quarenta alunos. Procurou-se uma sala
+que os comportasse, bem como tivesse os devidos equipamentos
+eletrõnicos para sediar apresentações
+
+
+
+\section{Data}
+Procurou-se fazer escolha de datas que maximizassem a aderência, e
+notoriedade do curso.
+
+
+\section{Elaboração do Minicurso}
+
+As divisões do curso foram feitas, esquematicamente, da seguite maneira, para cada umas
+das quatro aulas:
+
+\begin{itemize}
+\item Introdução, Filosofia, e Instalação do LaTeX - utilização de templates TeX.
+\item Produção de Relatórios, Teses e Monografias, Sob Norma ABNT -
+  pacote ABNTeX, imagens, tabelas, referências bibliográficas, e
+  citações ABNT.
+\item Controle e Modulação dos Parâmetros de Pacotes e Templates - produção de apresentações com pacote Beamer.
+\item Produção de Templates - produção de posters, banners e certificados.  Entrega do certificado de proficiência em LaTeX.
+\end{itemize}
+
+
+\section{Divulgação}
+
+Procurou-se determinar quais eram os canais mais populares, e com
+maiores retornos de público, para se divulgar. Bem como alocar a divulgação em datas estratégias.
+
+
+
+
+
+\chapter{Resultado}
+
+\section{Sediação}
+Resolveu-se por alocar-se na sala EF-15, nas instalações do DEMAR,
+devido à capacidade de suportar até 40 alunos; haver a suporte à
+projetores, cabos conectores e acesso à internet.
+
+\section{Data}
+De acordo com as datas do calendário USP, obtido na plataforma
+Jupiterweb, as aulas começam uma semana antes do carnaval. E, são
+demarcadas como semana de apresentação e recepção dos calouros. Assim,
+decidiu-se, estrategicamente, alocar o início do minicurso para depois
+do carnaval.
+
+\section{Elaboração do Minicurso}
+Durante o período de Agosto a Janeiro, desenvolveu-se as apresentações, e
+uma apostila virtual, a qual contém material suplementar de estudo e
+refência. A apostila será
+disponibilizada por meio do repositório
+\url{https://github.com/26-55-87-BuddhiLW/MC-LaTeX}, bem como
+materiais de apoio, exemplos, e os modelos canônicos ABNT usados nas aulas.
+
+Procurou-se, para a escolha dos tópicos, e partição das aulas,
+entender qual eram as necessidades dos alunos, quanto a produção
+acadêmicos. Ao mesmo tempo, o curso foi projetado de forma a maxizar o
+aprendizado sistemático do assunto.  Determinou-se que, tanto a
+formatação sob as normas ABNT, como a formatação de apresentações eram
+essenciais.
+
+Assim, deu-se enfoque nas segunda e terceira aulas nesses
+tópicos exclusivamente, e uma introdução reforçada, alocada à primeira
+aula,  na base teórica da programação \LaTeX. Por fim, na quarta aula,
+mostra-se mais como modular as configurações de pacotes, o que reforça
+os conhecimentos prévios, e expande a capacidade do aluno a fazer
+documentos variados, como posters e cartões.
+
+Com o software Krita, criou-se os planos de fundo que serão utilizados
+pelo grupo para a apresentação das aulas. Para isso, utilizou-se logos, e
+logomarcas, da USP, da EEL, e do grupo LabEEL.
+
+\section{Divulgação}
+
+No mês de fevereiro a partir do dia 17, utilizará-se de mídias sociais e de correspondência, como Facebook,
+Whatsapp, e e-mail usp, para que os alunos sejam informados do curso,
+bem como anunciar o período de inscrição. Escolhe-se o período de
+divulgação com base nas datas de feriados e início de aulas.
+
+Com o software Krita, criou-se uma arte conceptiva, para divulgação do
+curso. Utilizou-se, para essa produção, do logo oficial do LabEEL.
+
+
+\chapter{Conclusão Parcial}
+
+O projeto, nesse interim, se compraz de fase de produção de materiais,
+e planejamento. Considera-se ter sido efetivo o desenvolvimento do
+planejamento, e coordenação física do projeto. As quatro apresentações já
+foram produzidas.
+
+Algumas atividades extras, como criação de arte para divulgação, e
+modelos de planos de fundo padrão para todo o grupo da LabEEL que fará
+apresentações no mesmo formato.
+
+Não é possível, ainda, reportar conclusões e dados sobre o objetivo do
+projeto. Pois, a ministração do minicurso ainda não ocorreu. Por conseguinte,
+esses resultados serão reportados apenas no relatório final.
+
+
+\bibliography{bib}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
