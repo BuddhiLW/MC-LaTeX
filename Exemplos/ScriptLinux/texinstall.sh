@@ -5,7 +5,7 @@ echo $'Scripts são tão úteis!\n'
 #sudo apt-get update && sudo apt-get upgrade
 #echo "Downloading texlive full package and texstudio"
 echo $'Será feita a instalação completa do LaTeX.\n'
-sudo apt-get install texlive-full texstudio --yes
+sudo apt-get install texlive-full texstudio
 echo $'\n'
 echo $'Instalaremos, também, o TeXstudio (IDE pra LaTeX)\n'
 sudo apt-get install texstudio
