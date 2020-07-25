@@ -1,0 +1,13 @@
+
+  \frametitle{Referências Bibliográficas - Documento Principal}
+
+  \begin{itemize}
+  \item Comando \verb_\bibliography{Diretório/Nome-Arquivo-Bib}_ e seu resultado, na prática.
+  \end{itemize}
+
+
+\begin{center}
+  Resultado: \\
+  \includegraphics[scale=0.30]{../Imagens/A2I121.png}
+\end{center}
+

@@ -1,6 +1,6 @@
 %% abtex2-modelo-relatorio-tecnico.tex, v-1.9.7 laurocesar
-%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/ 
-%% 
+%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/
+%%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
 %% of this license or (at your option) any later version.
@@ -8,23 +8,23 @@
 %% http://www.latex-project.org/lppl.txt
 %% and version 1.3 or later is part of all distributions of LaTeX
 %% version 2005/12/01 or later.
-%% 
+%%
 %% This work has the LPPL maintenance status `maintained'.
-%% 
+%%
 %% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on 
+%% by Lauro César Araujo. Further information are available on
 %% http://www.abntex.net.br/
-%% 
+%%
 %% This work consists of the files abntex2-modelo-relatorio-tecnico.tex,
 %% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
-%% 
+%%
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
-% abnTeX2: Modelo de Relatório Técnico/Acadêmico em conformidade com 
+% abnTeX2: Modelo de Relatório Técnico/Acadêmico em conformidade com
 % ABNT NBR 10719:2015 Informação e documentação - Relatório técnico e/ou
 % científico - Apresentação
-% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
 \documentclass[
@@ -32,7 +32,7 @@
 12pt,				% tamanho da fonte
 openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
 oneside,			% para impressão em recto e verso. Oposto a oneside
-a4paper,			% tamanho do papel. 
+a4paper,			% tamanho do papel.
 % -- opções da classe abntex2 --
 % chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 % section=TITLE,		% títulos de seções convertidos em letras maiúsculas
@@ -42,7 +42,8 @@ a4paper,			% tamanho do papel.
 english,			% idioma adicional para hifenização
 french,				% idioma adicional para hifenização
 spanish,			% idioma adicional para hifenização
-brazil,				% o último idioma é o principal do documento
+brazil,				% o último idioma é o principal do
+% documento
 ]{abntex2}
 
 
@@ -51,10 +52,15 @@ brazil,				% o último idioma é o principal do documento
 % ---
 
 % ---
-% Pacotes fundamentais 
+% Pacotes fundamentais
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern
+%\usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+% \usepackage{times}
+% \usepackage{mathptmx}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
@@ -82,9 +88,9 @@ brazil,				% o último idioma é o principal do documento
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
-% --- 
+% ---
 % CONFIGURAÇÕES DE PACOTES
-% --- 
+% ---
 
 % ---
 % Configurações do pacote backref
@@ -106,7 +112,7 @@ brazil,				% o último idioma é o principal do documento
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Interferência Ótica}
+\titulo{INFERÊNCIA ÓTICA}
 \autor{Amanda Cabral, Camila Oliveira, Pedro Branquinho}
 \local{Lorena, São Paulo}
 \data{2019}
@@ -117,9 +123,9 @@ brazil,				% o último idioma é o principal do documento
   \par
   Ciências Básicas e Ambiental}
 \tipotrabalho{Relatório técnico de Física Experimental}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
-\preambulo{Experimentos número 6}
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da instituição e a área de concentração
+\preambulo{CINÉTICA DO GÁS HCL}
 % ---
 
 % ---
@@ -132,11 +138,11 @@ brazil,				% o último idioma é o principal do documento
 \makeatletter
 \hypersetup{
   % pagebackref=true,
-  pdftitle={\@title}, 
+  pdftitle={\@title},
   pdfauthor={\@author},
   pdfsubject={\imprimirpreambulo},
   pdfcreator={LaTeX with abnTeX2},
-  pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico}, 
+  pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico},
   colorlinks=true,       		% false: boxed links; true: colored links
   linkcolor=blue,          	% color of internal links
   citecolor=blue,        		% color of links to bibliography
@@ -145,11 +151,11 @@ brazil,				% o último idioma é o principal do documento
   bookmarksdepth=4
 }
 \makeatother
-% --- 
+% ---
 
-% --- 
-% Espaçamentos entre linhas e parágrafos 
-% --- 
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -173,7 +179,7 @@ brazil,				% o último idioma é o principal do documento
 \selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+\frenchspacing
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -205,7 +211,7 @@ Por meio de um elaborado aparato experimental, utilizando-se diversas lentes,
 conseguimos com que a luz vermelha ficasse em condições nítidas de
 interferência. Por conseguinte, demonstramos o caracter de onda das ondas
 eletromagnéticas.
-  
+
   \noindent
   \textbf{Palavras-chaves}: Interferência; Onda eletromagnética.
 \end{resumo}
@@ -307,7 +313,7 @@ $$ \Lambda = \frac{\lambda}{2 \sin{(\frac{\theta}{2})}}
 \chapter{Procedimento Experimental}
 
 \begin{enumerate}
-  
+
 \item Utilizou-se um laser e um divisor de feixe e ajustou-o de tal forma que os dois feixes
   emergentes estivessem aproximadamente paralelos entre si, horizontais, e
   separados por $\approx$2 cm. Com isso, produziu-se uma diferença de caminho óptico entre
@@ -415,13 +421,13 @@ As tabelas dos dados referentes à esse aparato experimental,
 
 Para calcular a distância entre o comprimento de onda utilizamos a \autoref{eqn:Lambda}, onde pegamos o valor do $\theta$ calculado anteriormente e utilizamos o valor da
 separação lateral entre os pontos de máximo $\Lambda$, \autoref{eqn:Lambda}.
- 
+
 
 Para medir a distância lateral entre os máximos nessa parte do experimento
 utilizamos a escala micrométrica, e os valores obtidos são apresentados na \autoref{tab:Sep}.
 
 
-O primeiro método para se obter o valor de $\lambda$ foi o menos preciso pois o seu desvio padrão foi bem grande e o menos exato considerando a que o valor médio experimental está muito distante do valor real conhecido. O segundo método foi mais preciso com o valor do desvio padrão menor, mas ainda assim não é exato pois o valor médio experimental ser muito superior ao valor real. 
+O primeiro método para se obter o valor de $\lambda$ foi o menos preciso pois o seu desvio padrão foi bem grande e o menos exato considerando a que o valor médio experimental está muito distante do valor real conhecido. O segundo método foi mais preciso com o valor do desvio padrão menor, mas ainda assim não é exato pois o valor médio experimental ser muito superior ao valor real.
 
 
 Na segunda parte do experimento, utilizamos o artifício da ampliação lateral
@@ -434,7 +440,7 @@ distância entre dois máximos, que são aprensetados na \autoref{tab:Sep}.
 \begin{table}[!htb]
   \IBGEtab{%
     \caption{\label{tab:Sep}Tabela com os valores de separação lateral medidos por uma escala micrométrica}%
- 
+
   }
   {%
     \begin{tabular}{ccccccc}
@@ -450,7 +456,7 @@ distância entre dois máximos, que são aprensetados na \autoref{tab:Sep}.
       1.2& 1.2& 1.2  & 1.2 & 0.25& 30.73 & 780.99 \\
       \hline
       \multicolumn{6}{c}{$ \lambda = 2437.15$ $\pm$ $660.4 nm $}\\
-      
+
       \bottomrule
     \end{tabular}%
   }
@@ -472,3 +478,8 @@ No experimento esperávamos poder definir o comprimento de onda de uma luz polar
 \bibliography{ref-bib}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

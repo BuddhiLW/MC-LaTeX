@@ -1,0 +1,460 @@
+\documentclass[12pt,
+brazilian,
+a5paper]{abntex2} % Default font size and left-justified equations
+
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+%% Identação modular no ambiente 'myparident'
+\newlength\mystoreparindent
+\newenvironment{myparindent}[1]{%
+  \setlength{\mystoreparindent}{\the\parindent}
+  \setlength{\parindent}{#1}
+}{%
+  \setlength{\parindent}{\mystoreparindent}
+}
+
+\usepackage{verbatimbox}
+\usepackage{array}
+
+
+% ----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% ----------------------------------------------------------------------------------------
+%	TITLE PAGE
+% ----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+  \coordinate [below=50cm] (midpoint) at (current page.north);
+  \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperheight]{p21.jpg}};
+  \draw (current page.center) node [fill=ocre!50!white,fill
+  opacity=0.75,text opacity=2,inner
+  sep=1cm]{\Huge\centering\bfseries\rmfamily \color{grey!80!white} \parbox[c][][t]{\paperheight}{\centering
+      {\huge  Referências Cruzadas, \\ Apresentações e \\ Sumário dos Comandos Essenciais} \\[20pt] % Book title
+      {\Large Parte 3}\\[20pt] % Subtitle
+      {\huge Aluno, Pedro G. Branquinho \\ Orientadora, Katia C. G. Candioto}}}; % Author name
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+% ----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+% ----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2020 Pedro G. Branquinho\\ % Copyright notice
+
+% \noindent \textsc{Published by BuddhiLWinc.}\\ % Publisher
+
+\noindent \textsc{https://github.com/26-55-87-BuddhiLW/MC-LaTeX}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
+
+% \noindent \textit{First printing, January 2020} % Printing/edition date
+\clearpage
+% ----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+% ----------------------------------------------------------------------------------------
+
+% \usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{p10.jpg} % Table of contents heading image
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+% \tableofcontents % Print the table of contents itself
+
+{%Muda a cor do Sumário, pois são todo links.
+  \hypersetup{
+    colorlinks=true,
+    citecolor= violet,
+    linkcolor=black!85,
+    filecolor=magenta,
+    urlcolor=cyan,
+  }
+
+  \tableofcontents*
+}%
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+\pagestyle{fancy} % Enable headers and footers again
+
+% ----------------------------------------------------------------------------------------
+%	PART
+% ----------------------------------------------------------------------------------------
+
+\part{Parte Três}
+
+% ----------------------------------------------------------------------------------------
+%	CHAPTER 1
+% ----------------------------------------------------------------------------------------
+
+\chapterimage{8.jpg} % Chapter heading image
+
+\chapter{Referências Cruzadas \label{ch:ref}}\index{Referências cruzadas}
+% \chapter{History and Philosophy of LaTeX}
+
+\section{Bibliografia}
+
+\subsection{BibTeX}
+
+O BibTeX é uma uma ferramenta intricada para organizar meta-dados de
+trabalhos científicos, e sistematizar seu uso, por meio do
+LaTeX. No entanto, hoje, em 2020, é possível utilizá-lo, também, em
+softwares, por meio de programas \textit{third-parties} (e.g.,
+Mendeley). Esse programa lançado em 1984, e creado por Oren Patashnik
+\cite{patashnik1984}. Sua programação encorpora conceitos complexos da
+matemática, como \text{Markov-chains}, entre outras coisas
+\cite{patashnik1988}. Tudo para que os usuários não tenham o trabalho
+repetitivo de escrever cada citação, milimetricamente,
+corretamente. Mas que o bibtex faça isso, apenas lhe fornecendo os
+dados biográficos.
+
+No site do bibtex é explicado tudo o que é necessário para o utilizar
+\cite{feder2006}. E, a explicação é breve.
+
+
+\subsection{Como utilizar o BibTeX}
+
+Para utilizarmos o BibTeX, precisa-se ter um arquivo com extensão
+``.bib'' para que seja chamado, ao fim do ambiente \textit{document},
+pelo comando \verb+\bibliography{nome-do-aquivo-ponto-bib}+. Por
+exemplo, para esse livro, o meu arquivo bibtex se chama ref-bib.bib e
+compartilha o mesmo diretório com o arquivo .tex do livro. Assim,
+chamei, ao fim do documento, antes do comando \verb+\end{document}+, o
+comando \verb_\bibliography{ref-bib}_.
+
+\clearpage
+
+\subsubsection{Formatação do aquivo .bib}
+
+A formatação das entradas de citações bibtex consistem em variações
+desse exemplo,
+
+\begin{verbatim}
+@article{jackson2009dna,
+  title={The DNA-damage response in human biology and disease},
+  author={Jackson, Stephen P and Bartek, Jiri},
+  journal={Nature},
+  volume={461},
+  number={7267},
+  pages={1071},
+  year={2009},
+  publisher={Nature Publishing Group}
+}
+\end{verbatim}
+
+\verb_@article_ é o gênero da publicação, e existem diversas
+entradas. A lista completa de entradas pode ser achada no \href{https://www.bibtex.com/e/entry-types/}{site} da
+Paperpile, com diversos exemplos \cite{paperpile2020}. Os mais comuns
+são \verb+@misc+, para \textit{miscelaneous}, o qual quer dizer
+``diversos'' e é utilizado para fazer citações de sites. Por exemplo,
+
+\begin{verbatim}
+@misc{paperpile2020,
+title={Complete list of BibTeX entry types [with examples]},
+howpublished={\url={https://www.bibtex.com/e/entry-types/}},
+note={Online; acessado 07, Jun., 2020},
+journal={Paperpile},
+author={Paperpile, Group},
+year=2019,
+}
+\end{verbatim}
+
+Também comuns são \verb+@books+,
+
+\begin{verbatim}
+@book{young1807,
+  title={A course of lectures on natural philosophy and the mechanical arts: in two volumes},
+  author={Young, Thomas},
+  volume={2},
+  year={1807},
+  publisher={Johnson}
+}
+\end{verbatim}
+
+Não precisamos nos preocupar, no entanto, em formatar essas
+informações manualmente. Quase toda ferramenta de busca lhe dará a
+alternativa de puxar a formatação bibtex, auto-generada, de um
+trabalho científico. Podemos ver \autoref{im:1}, \autoref{im:2} e \autoref{im:3}, um
+exemplo da simplicidade de se conseguir esses meta-dados.
+
+\clearpage
+
+\begin{figure}[!htb]
+  \caption{\label{im:1} Navegando no Google Scholar, com a
+    procura, John Doe.}
+  \begin{center}
+    \includegraphics[scale=0.4]{./Pictures/Ilustracoes/1.png}
+  \end{center}
+  \legend{Fonte: o autor}
+  \nota{é importante clicar no símbolo de aspas, à esquerda inferior}
+\end{figure}
+
+\begin{figure}[!htb]
+  \caption{\label{im:2} Opções dadas de formatação. Utilizamos a
+    BibTeX.}
+  \begin{center}
+    \includegraphics[scale=0.4]{./Pictures/Ilustracoes/2.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+Por fim, clicamos na opção BibTeX,
+\begin{figure}[!htb]
+  \caption{\label{im:3} Autogeração de meta-dados científicos}
+  \begin{center}
+    \includegraphics[scale=0.4]{./Pictures/Ilustracoes/3.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+\clearpage
+
+\subsection{Citação textual}
+
+Uma vez que temos os meta-dados em nosso arquivo .bib, armazenados,
+utilizamos o primeiro argumento da lista de meta-dados, como argumento
+da fução \verb+\cite{argumento-citação}+. Isto é, no caso da
+\autoref{im:3}, para se fazer a citação textual, escreveríamos,
+\verb_\cite{lidsky2009anonymity}_. O resultado que obteríamos é:
+\cite{lidsky2009anonymity}.
+
+Note que a formatação ABNT é seguida, com a classe abntex2. Se
+utilizássemos a classe article, no entanto, essa formatação seria
+diferente. %\footnote{mais inforamações na \autoref{sc:fmt}}
+
+\subsection{Secção Bibliografia}
+
+Para crearmos a citação bibliografia, utilizamos o comando
+\verb_\bibliography{ref-bib}_. Desta forma, é formatada a secção
+bibliográfica, a partir dos meta-dados .bib, sobreposto a estrutura que foi
+modulada pela classe do documento (e.g., abntex2, article, book
+etc).
+
+
+\begin{figure}[!htb]
+  \caption{\label{im:4} Secção Bibliográfica, classe abntex2}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./Pictures/Ilustracoes/4.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+Felizmente, é possível, para citações sob a norma ABNT, puxar-se
+um pacote separado da classe abntex2, \verb+\usepackage[alf]{abntex2cite}+.
+
+\chapterimage{../bunnies.png}
+\chapter{Apresentações}
+
+
+
+
+
+
+
+  \begin{threeparttable}
+    \begin{tabular}{rrrrrrrrr} \hline aaaaaaaa & aaaaaaaa & aaaaaaaa &
+      aaaaaaaa & aaaaaaaa & aaaaaaaa & aaaaaaaa & aaaaaaaa &
+      aaaaaaaa\\ \hline
+    \end{tabular}%
+    \begin{tablenotes}
+    \end{tablenotes}
+  \end{threeparttable}
+
+
+
+
+
+\section{Classe Beamer}
+
+A classe beamer é a mais utilizada para se fazer aprensentações, em
+LaTeX. É possível, a partir de sua declaração, utilizar, já
+estilizadas, opções de temas, cores e fontes.
+
+\vspace{4mm}
+
+Para tanto, precisamos declarar no preâmbulo os seguintes comandos,
+
+\begin{itemize}
+\item \verb+\usetheme{tema}+
+\item \verb+\usecolortheme{cor-do-tema}+
+\item \verb+\usefonttheme{font}+
+\end{itemize}
+
+\vspace{4mm}
+
+As opções, nativas ao Beamer, possíveis são,
+
+\begin{itemize}
+\item \textbf{Temas}: AnnArbor Antibes Bergen Berkeley
+Berlin Boadilla boxes CambridgeUS Copenhagen Darmstadt default Dresden
+Frankfurt Goettingen Hannover Ilmenau JuanLesPins Luebeck Madrid
+Malmoe Marburg Montpellier PaloAlto Pittsburgh Rochester Singapore
+Szeged Warsaw.
+\item \textbf{Cores}: albatross beaver beetle crane default dolphin dove fly lily
+orchid rose seagull seahorse sidebartab structure whale wolverine.
+\item \textbf{Fontes}: default professionalfonts serif structurebold
+  structureitalicserif structuresmallcapsserif.
+\end{itemize}
+
+\vspace{4mm}
+
+Claro que, podemos fazer todas as modulações que desejarmos, como
+usualmente fazemos. Por exemplo, mudar a fonte da nossa apresentação
+para Times, utilizando o pacote  ``times''.
+
+\clearpage
+
+\subsection{Estrutura da apresentação}
+
+Todo slide é representado, dentro do LaTeX, por meio do ambiente
+``frame''. Ademais, se quisermos que um mesmo slide tenha
+comportamentos dinâmicos, como, por exemplo, itens aparecerem,
+gradualmente, na tela, as modulações serão feitas dentro de um mesmo
+ambiente-frame. Podemos ver isso pela comparação do código na
+\autoref{im:5}, e o comportamento da mudaça de um ``slide'', da
+\autoref{im:5} à \autoref{im:6}.
+
+\begin{figure}[!htb]
+  \caption{\label{im:5} Comparação do código e a apresentação}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./Pictures/Ilustracoes/5.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+\begin{figure}[!htb]
+  \caption{\label{im:6} Mudança de slide, no mesmo frame}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./Pictures/Ilustracoes/6.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+Note que podemos numerar em qual ordem, dos 5 slides, nesse caso
+específico, que cada item aparecerá. Essa modulação também pode ser
+feita com imagens, caixas e tabelas, utilizando as mesmas opções do itemize,
+\verb+\comando<n-m>{}+. Isso faz com que o \emph{comando} apareça do slide
+`n' ao slide `m'. se omitirmos um dos números, o comportamento se
+estende, \verb+<n->+, do n até o fim do frame. Ou \verb+<-m>+ do início até o
+m-ésimo slide do frame.
+
+Portanto, um frame pode conter diversos slides. E, é possível crear
+uma dinâmica dentro de uma sequência de slides de um mesmo frame.
+
+\clearpage
+
+\subsubsection{Ambiente caixa}
+
+Nativamente, o Beamer diponibiliza comandos de caixas, eles são os
+ambientes,
+\begin{verbatim}
+\begin{block}{nome-do-bloco}, \begin{alertbox}{nome} e \begin{examples}{nome}
+\end{verbatim}
+
+A munça de cada um deles é virtualmente
+sua cor.
+
+No entanto, existe um pacote, \verb+\usepackage{tcolorbox}+, o
+qual capacita uma vasta gama de modulações a mais para
+ambientes-caixas.
+
+Fica aqui um exemplo utilizado na apresentação, \autoref{im:7},
+
+\begin{figure}[!htb]
+  \caption{\label{im:7} Comparação do código e a apresentação, pacote tcolorbox}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./Pictures/Ilustracoes/7.png}
+  \end{center}
+  \legend{Fonte: o autor}
+\end{figure}
+
+
+O código da \autoref{im:7}, é,
+
+\begin{verbnobox}[\fontsize{12pt}{12pt}\selectfont]
+\begin{tcolorbox}[colback=red!5!white,colframe=red!70!white,title=Exemplos]
+  \begin{itemize}
+
+  \item[{\textcolor{red!10!white}{\ding{166}}}] O HTML + CSS são
+    linguagens marcadoras de texto para produção web.
+    \pause
+
+  \item[{\textcolor{red!30!white}{\ding{166}}}] Jupiterweb, Moodle,
+    Dedalus são sitemas integrados acadêmicos.
+    \pause
+  \item[{\textcolor{red!50!white}{\ding{166}}}] O Emacs, Vim, Atom,
+    Visual Studio, Sublime etc. são interfaces gráficas unificadas.
+    \pause
+  \item[{\textcolor{red!70!white}{\ding{166}}}] O \alert{\LaTeX} é uma
+    linguagem - marcadora de texto - para produção de documentos.
+  \end{itemize}
+\end{tcolorbox}
+\end{verbnobox}
+
+\chapterimage{../25.jpg}
+\chapter{Sumário de referências}
+\vspace{1cm}
+
+\section{Sites}
+
+\begin{center}
+\resizebox{0.90\textwidth}{!}{%
+
+
+
+\begin{tcolorbox}[tabulars={@{\extracolsep{\fill}\hspace{1mm}}l|l|l@{\hspace{10mm}}},
+  boxrule=0.5pt,title={\large \centering Sites de referência} \label{tab:sites}]
+
+  \textbf{Comandos/Comportamentos} & \textbf{Pacotes} & \textbf{Sites} \\
+  \hline \hline
+  Matemática                             &  amsmath, esint &
+  \href{http://linorg.usp.br/CTAN/macros/latex/required/amsmath/amsldoc.pdf}{amsmath},
+  \href{http://linorg.usp.br/CTAN/macros/latex/contrib/esint/esint-doc.pdf}{esint}, \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{wiki}  \\\hline
+  Imagens, gráficos e cores             & tikz, graphicx, xcolors
+  graphics   &
+  \href{http://linorg.usp.br/CTAN/macros/latex/required/graphics/grfguide.pdf}{1},
+  \href{http://linorg.usp.br/CTAN/info/epslatex/english/epslatex.pdf}{2},
+  \href{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}{wiki/tikz},
+  \href{http://linorg.usp.br/CTAN/graphics/pgf/base/doc/pgfmanual.pdf}{tikz},
+  \href{https://www.ctan.org/pkg/xcolor}{x}\\\hline
+  ABNT                &  classe abntex, pacote abntex2cite
+  & \href{https://www.ctan.org/pkg/abntex2}{doc. oficial (CTAN)} \\\hline
+  Modelos & Overleaf, Repositórios &
+  \href{https://github.com/26-55-87-BuddhiLW/MC-LaTeX}{Repositório},
+  \href{https://www.overleaf.com/latex/templates}{Overleaf dasdsadas}\\\hline
+  Apresentações & Beamer & \href{https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_theme.html}{Galeria}; \href{http://linorg.usp.br/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{docum.}
+\end{tcolorbox}
+
+}
+\end{center}
+
+Pode-se acessar uma lista completa de símbolos matemáticos
+\href{https://www.caam.rice.edu/~heinken/latex/symbols.pdf}{aqui}. E,
+lembre-se o \href{https://www.ctan.org/}{CTAN} sempre é mais extensa refência que você terá sobre
+uma classe ou pacote. E, o \href{https://en.wikibooks.org/wiki/LaTeX}{wiki} também é uma fonte fantástica de informações
+
+%%%%%%%%%% REFERÊNCIAS %%%%%%%%%%%%%%%%%%%
+\chapterimage{../I9.jpg}
+\bibliography{ref-bib}       %%puxa a bibliografia no diretório do
+%% arquivo .tex, com nome 'ref-bib' (não
+%% se põe se escreve a extensão .bib)
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

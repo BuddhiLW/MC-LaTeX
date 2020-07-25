@@ -1,0 +1,26 @@
+\beamer@sectionintoc {1}{Motivações}{2}{0}{1}
+\beamer@sectionintoc {2}{Motivações}{3}{0}{2}
+\beamer@sectionintoc {3}{Motivações}{4}{0}{3}
+\beamer@sectionintoc {4}{Motivações}{5}{0}{4}
+\beamer@sectionintoc {5}{Motivações}{6}{0}{5}
+\beamer@sectionintoc {6}{O que é um Ambiente Unificado?}{7}{0}{6}
+\beamer@sectionintoc {7}{O que é um Ambiente Unificado?}{8}{0}{7}
+\beamer@sectionintoc {8}{O que é um Ambiente Unificado?}{9}{0}{8}
+\beamer@sectionintoc {9}{O que é um Ambiente Unificado?}{10}{0}{9}
+\beamer@sectionintoc {10}{O que é um Ambiente Unificado?}{11}{0}{10}
+\beamer@sectionintoc {11}{O que é um Ambiente Unificado?}{12}{0}{11}
+\beamer@sectionintoc {12}{Open Source}{13}{0}{12}
+\beamer@sectionintoc {13}{Open Source}{14}{0}{13}
+\beamer@sectionintoc {14}{Open Source}{15}{0}{14}
+\beamer@sectionintoc {15}{Open Source}{16}{0}{15}
+\beamer@sectionintoc {16}{Open Source}{17}{0}{16}
+\beamer@sectionintoc {17}{Open Source}{18}{0}{17}
+\beamer@sectionintoc {18}{Instalação em Linux/Unix}{19}{0}{18}
+\beamer@sectionintoc {19}{Instalação em Linux/Unix}{20}{0}{19}
+\beamer@sectionintoc {20}{Instalação em Windows}{24}{0}{20}
+\beamer@sectionintoc {21}{Instalação em Windows}{25}{0}{21}
+\beamer@sectionintoc {22}{TeXstudio, funcionalidades}{26}{0}{22}
+\beamer@sectionintoc {23}{TeXstudio, funcionalidades}{27}{0}{23}
+\beamer@sectionintoc {24}{Pacotes, Documentação, e Templates}{30}{0}{24}
+\beamer@sectionintoc {25}{Utilização de Template}{34}{0}{25}
+\beamer@sectionintoc {26}{Exercícios}{36}{0}{26}

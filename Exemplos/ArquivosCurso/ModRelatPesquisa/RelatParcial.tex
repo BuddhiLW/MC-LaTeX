@@ -39,10 +39,11 @@
 	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
+      %  english,			% idioma adicional para hifenização
+	% french,				% idioma adicional para hifenização
+	% spanish,			% idioma adicional para hifenização
+        brazil,				% o último idioma é o
+        % % principal do documento
 	]{abntex2}
 
 
@@ -108,8 +109,8 @@
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
 \titulo{Minicurso de \LaTeX}
-\autor{Aluno: Pedro G. Branquinho \\ Orientadora: Katia Cristiane
-  Gandolpho Candioto}
+\autor{\large{Aluno: Pedro G. Branquinho \\ Orientadora: Katia Cristiane
+  Gandolpho Candioto}}
 \local{Lorena, São Paulo}
 \data{13 de Fevereiro de 2020}
 \instituicao{%
@@ -135,7 +136,7 @@
 \makeatletter
 \hypersetup{
      	%pagebackref=true,
-		pdftitle={\@title},
+		pdftitle={\large \@title},
 		pdfauthor={\@author},
     	pdfsubject={\imprimirpreambulo},
 	    pdfcreator={LaTeX with abnTeX2},
@@ -165,6 +166,7 @@
 % ---
 \makeindex
 % ---
+
 
 % ----
 % Início do documento

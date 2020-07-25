@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.13
+[0] Config.pm:307> INFO - Logfile is 'Rel_Aprs2.blg'
+[24] biber:315> INFO - === Sun Mar 29, 2020, 21:48:57
+[84] Utils.pm:316> ERROR - Cannot find 'Rel_Aprs2.bcf'!
+[84] Biber.pm:114> INFO - ERRORS: 1

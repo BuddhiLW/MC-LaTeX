@@ -1,0 +1,16 @@
+\beamer@sectionintoc {1}{Motivações}{2}{0}{1}
+\beamer@sectionintoc {2}{Open Source}{24}{0}{2}
+\beamer@sectionintoc {3}{Open Source}{25}{0}{3}
+\beamer@sectionintoc {4}{Open Source}{26}{0}{4}
+\beamer@sectionintoc {5}{Open Source}{27}{0}{5}
+\beamer@sectionintoc {6}{Open Source}{28}{0}{6}
+\beamer@sectionintoc {7}{Open Source}{29}{0}{7}
+\beamer@sectionintoc {8}{Instalação em Linux/Unix}{31}{0}{8}
+\beamer@sectionintoc {9}{Instalação em Linux/Unix}{32}{0}{9}
+\beamer@sectionintoc {10}{Instalação em Windows}{36}{0}{10}
+\beamer@sectionintoc {11}{Instalação em Windows}{37}{0}{11}
+\beamer@sectionintoc {12}{TeXstudio, funcionalidades}{38}{0}{12}
+\beamer@sectionintoc {13}{TeXstudio, funcionalidades}{39}{0}{13}
+\beamer@sectionintoc {14}{Pacotes, Documentação, e Templates}{42}{0}{14}
+\beamer@sectionintoc {15}{Utilização de Template}{46}{0}{15}
+\beamer@sectionintoc {16}{Exercícios}{48}{0}{16}

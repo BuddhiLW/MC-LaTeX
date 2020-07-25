@@ -1,0 +1,833 @@
+\documentclass[12pt,
+brazilian,
+a5paper]{abntex2} % Default font size and left-justified equations
+
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+%% Identação modular no ambiente 'myparident'
+\newlength\mystoreparindent
+\newenvironment{myparindent}[1]{%
+  \setlength{\mystoreparindent}{\the\parindent}
+  \setlength{\parindent}{#1}
+}{%
+  \setlength{\parindent}{\mystoreparindent}
+}
+
+\usepackage{verbatimbox}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+% ----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% ----------------------------------------------------------------------------------------
+%	TITLE PAGE
+% ----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+  \coordinate [below=50cm] (midpoint) at (current page.north);
+  \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperheight]{p11.jpg}};
+  \draw (current page.center) node [fill=ocre!50!white,fill
+  opacity=0.6,text opacity=1,inner
+  sep=1cm]{\Huge\centering\bfseries\sffamily \color{white} \parbox[c][][t]{\paperheight}{\centering
+      {\huge Explicação dos Comandos  Essenciais } \\[20pt] % Book title
+      {\Large Parte 2}\\[20pt] % Subtitle
+      {\huge Aluno, Pedro G. Branquinho \\ Orientadora, Katia C. G. Candioto}}}; % Author name
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+% ----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+% ----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2020 Pedro G. Branquinho\\ % Copyright notice
+
+% \noindent \textsc{Published by BuddhiLWinc.}\\ % Publisher
+
+\noindent \textsc{https://github.com/26-55-87-BuddhiLW/MC-LaTeX}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
+
+% \noindent \textit{First printing, January 2020} % Printing/edition date
+\clearpage
+% ----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+% ----------------------------------------------------------------------------------------
+
+% \usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{p10.jpg} % Table of contents heading image
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+% \tableofcontents % Print the table of contents itself
+
+{%Muda a cor do Sumário, pois são todo links.
+  \hypersetup{
+    colorlinks=true,
+    citecolor= violet,
+    linkcolor=black!85,
+    filecolor=magenta,
+    urlcolor=cyan,
+  }
+
+  \tableofcontents*
+}%
+
+
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+\pagestyle{fancy} % Enable headers and footers again
+
+% ----------------------------------------------------------------------------------------
+%	PART
+% ----------------------------------------------------------------------------------------
+
+\part{Parte Dois}
+
+% ----------------------------------------------------------------------------------------
+%	CHAPTER 1
+% ----------------------------------------------------------------------------------------
+
+\chapterimage{7.jpg} % Chapter heading image
+
+\chapter{Comandos Frequentes \label{ch:comandos}}\index{Comandos frequentes}
+% \chapter{History and Philosophy of LaTeX}
+
+\section{Comandos diretos \label{sc:cd}}
+
+\subsection{Referências metatextuais e referências externas \label{sc1:refME}}
+
+Com o pacote \emph{hyperref} e seus derivados, podemos fazer
+referências a objetos exteriores ao próprio documento, como,
+\href{http://linorg.usp.br/CTAN/macros/latex/contrib/hyperref/doc/manual.pdf}{links}.
+Utilizamos, para isso \verb+\href{<url>}{texto-indicador}+. Existem
+classes as quais já trazem o pacote hyperref, sem necessidade de o
+chamar ao preâmbulo. Assim é a classe \emph{abntex2} a qual o carrega
+e o modifica.
+
+O pacote \emph{hyperref} também é utilizado para apontar a pontos do
+próprio texto. A isso chamamos referências metatextuais. Observe,
+\autoref{sc1:refME}. O comando utilizado é
+\verb+\autoref{label}+\footnote{Discutiremos mais afundo no próximo material}.
+
+\subsection{Formatação tipográficas}
+
+Podemos mudar a formatação do texto a qualquer momento, localmente,
+quando desejarmos. Variáções dentro de uma mesma fonte são bem
+comuns. Isto é,
+
+\vspace{3mm}
+\begin{tcolorbox}[tabulars={@{\extracolsep{\fill}\hspace{5mm}}lrrrrr@{\hspace{5mm}}},
+  boxrule=0.5pt,title=Formatação tipográfica]
+  \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em \LaTeX{}es} \\
+  \hline \hline
+  Small Capitals     & \textsc{\textbf{S}mall \textbf{C}aps} & \verb+\textsc{}+ \\\hline
+  Itálico                  &  {\textit{\textbf{It}-alic}} & \verb+\textit{}+ \\\hline
+  Negrito                & {\textbf{\emph{B}old \emph{F}ace}}  & \verb+\textbf{}+ \\\hline\hline
+  Ênfase                 & {\emph{\textbf{Emph}-asis}} & \verb+\emph{}+
+\end{tcolorbox}
+\vspace{3mm}
+
+Note que as separações da segunda coluna foram propositais, pois, seus
+comandos são minemônicos ao que se referem. Em geral, algo do tipo \verb+\text[minemônico]+
+
+Também, é possível fazer mudanças quanto qual \emph{fonte} queremos
+utilizar. Em geral, utilizaremos algo do tipo:
+\verb+{\selectfont \<mudaça-d'fonte>}+.
+
+
+Há uma lista de possíveis fontes. Claro que, há como fazer
+alterações ainda mais extravagantes. Isto é, utilizar fontes não
+padrão. Começemos analizando as três famílias padrões, a ``serifada'', a
+``san serifada'' e a ``escritor''.
+
+\vspace{3mm}
+\begin{tcolorbox}[tabulars={@{\extracolsep{\fill}\hspace{5mm}}lrrrrr@{\hspace{5mm}}},
+  boxrule=0.5pt,title=Formatação tipográfica]
+  \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em \LaTeX{}es} & \textbf{Alternativamente}\\
+  \hline \hline
+  Serif                             & {\rmfamily
+    \textbf{R}o\textbf{m}ana} & \verb+{\rmfamily}+  & \verb+\textrm{}+ \\\hline
+  Sans Serif                  &  {\sffamily{\textbf{S}ans
+      Seri\textbf{f}} & \verb+{\sffamily}+  & \verb+\textsf{}+\\\hline
+    Type Writer                & {\ttfamily{\textbf{T}ype
+        Wri\textbf{t}er}}  & \verb+{\ttfamily}+ & \verb+\texttt{}+
+  \end{tcolorbox}
+  \vspace{3mm}
+
+  Assim, tanto \verb+{\selectfont {\rmfamily  <texto serifado 1>}}+ ou \\
+  \verb+{\selectfont\textrm{<texto serifado 2>}}+ gerarão o mesmo
+  resultado. Respectivamente, temos, utilizando os códigos: {{\selectfont {\rmfamily  texto
+        serifado 1}} e {\selectfont \textrm{texto serifado 2}}.
+
+    A preferência é puramente estética para quem programa. Pois, quando
+    se está compondo diversos comportamentos ao mesmo tempo, as formas
+    mudam apenas enquanto sua ``limpeza''. Por exemplo,
+\begin{verbatim}{\selectfont \boldseries \footnotesize \ttfamily texto em type
+  writer family, tamanho de róda pé, em negrito}
+\end{verbatim}
+    Ou
+\begin{verbatim}{\fontsize{8pt}\selectfont\textbf{\texttt{texto em type
+  writer family, tamanho de róda pé, em negrito}}
+\end{verbatim}
+    Dão o mesmo resultado. Porém, a primeira forma tende a ser mais
+    legível.
+
+    \vspace{0.1cm}
+    \noident Resultado: {{{{{{\selectfont \boldseries \footnotesize \ttfamily texto em type
+                writer family, tamanho de róda pé, em negrito.}}}}}}
+
+    Informações suplementares podem ser encontradas na
+    \href{https://en.wikibooks.org/wiki/LaTeX/Fonts}{Wikipédia}\footnote{O
+      livro que documenta de cabo a rabo todas as funcionalidades do \LaTeX,
+      e por volta de 200 pacotes é o livro ``The \LaTeX{} companion''
+      \cite{mittelbach2004}} a qual retira informações do livro ``Pratical typography''\cite{butterick2010}. Ou, pode-se referir a um guia dedicado somente
+    a
+    \href{https://www.latex-project.org/help/documentation/fntguide.pdf}{fontes}. Há
+    um tramento de aspectos para quem quer aprender mais para produzir
+    pacotes, em português; uma tradução titulada ``Uma não tão pequena
+    introdução ao LATEX2 $\varepsilon$''\cite{oetiker1995}.
+
+    \subsection{Mudança de cor \label{sc1:cor}}
+
+    Usando-se o pacote \textit{xcolor}, podemos utilizar o comando \verb+\colortext{color}{texto-em-cor}+
+    \textcolor{violet}{texto em violeta} ou \textcolor{red}{texto em
+      vermelho}. Ademais, é possível mudar a tonalidade das cores base,
+    usando, na definição de cores o símbolo ``!''. Por exemplo, \textcolor{red!80!white}{texto em vermelho!80!white} ou \textcolor{red!50!white}{texto em
+      vermelho!50!white}. Ou, \textcolor{red!60!black}{texto em
+      vermelho!60!black}. Esse comportamento advém do pacote tikz, ao qual
+    é a base para quase qualquer estilização de cor a qual é utilizada em
+    grandes pacotes.
+
+    As cores básicas definidas por \verb+\usepackage{xcolor}+ são ``black,
+    blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta,
+    olive, orange, pink, purple, red, teal, violet, white, yellow''. E, a opção dvipsnames, em
+    \verb+\usepackage[dvipsnames]{xcolor}+ deixa definido 68 cores
+    padrões. E, a classe beamer carrega esse pacote automaticamente. A
+    opção dvipsnames pode ser carregada em sua opção. e.g., \verb+\documentclass[dvipsnames]{beamer}+.
+
+
+    \section{Comandos em Ambientes}
+    Cobriremos os ambientes frequentemente usados de imagens, tabelas e
+    fórmulas matemáticas, a seguir.
+
+    \subsection{Imagens \label{sc1:imagens}}
+
+    Imagens pré-fixadas seguem o seguinte modelo geral,
+
+\begin{verbatim}
+\begin{figure}[localização-da-imagem]
+  \begin{center}
+    \caption{Descrição-da-imagem}
+    \includegraphics[proporção]{Diretório-da-Imagem}
+    \legend{Legenda}
+  \end{center}
+\end{figure}
+\end{verbatim}
+
+
+    O ambiente ``figure'' recebe as opções automatizadas de colocar a
+    imagem, ``aqui' [h]', ``acima''[t], ``abaixo''[b], ou uma combinação
+    de possibilidades, automaticamente escolhida a partir da melhor
+    configuração tipográfica. Isto é, \verb+\begin{figure}[htb]+. Se
+      quiser ainda mais controle em detrimento de outras proporções
+      textuais, e requisitar que a imagem fique
+      onde está, utiliza-se a opção ``!'', \verb+\begin{figure}[!htb]+.
+
+        \verb+\caption{}+ e \verb+\legend{}+ é onde fica o descritivo da
+        imagem e sua legenda. Em caption, geralmente, também, compomos o
+        comando de label. Isto é, \verb+\caption{\label{imagem:label}
+          Descrição-da-imagem}+. O \verb+\label{}+ não aparece no
+        documento explicitamente. Ele serve para fazer meta-referências
+        textuais como essa: \autoref{sc1:imagens}.
+
+        Um exemplo real,
+
+        \begin{figure}[!htb]
+          \begin{center}
+            \caption{\label{fig:mapa}Mapa mental da organização dos tópicos relativos ao software livre}
+            \includegraphics[scale=0.3614]{../Ilustracoes/mapa.jpeg}
+            \legend{Fonte: Camila Oliveira}
+          \end{center}
+        \end{figure}
+
+        \clearpage
+
+        O código é o que se segue,
+
+
+        \begin{verbnobox}[\fontsize{9.5pt}{9.5pt}\selectfont]
+          \begin{figure}[!htb]
+            \begin{center}
+              \caption{\label{fig:mapa}Mapa mental da organização dos tópicos relativos ao software livre}
+              \includegraphics[]{../ilustacoes/mapa.jpeg}
+              \legend{Fonte: Camila Oliveira}
+            \end{center}
+          \end{figure}
+        \end{verbnobox}
+
+
+        Para se ter ainda maior controle das imagens, para documentos como
+        \textsf{posters}, deve-se usar pacotes \footnote{Iremos conversar
+          mais sobre esse tópico, na próxima parte} e comandos que definirão,
+        como o \verb+\includegraphics+ opções como
+        \verb+[width=0.4\texwidth]+. Isto é, a imagem com essa opção ocupa
+        40\% do espaço de largura disponível. Ademais, para se referir
+        a imagem, usamos \verb+\autoref{fig:mapa}+. Isto é,
+        \autoref{fig:mapa}.
+
+        Note que, utilizamos, também, o ambiente ``center''. Isso faz com
+        que a imagem fique centralizada, bem como o texto que se encontra
+        dentro do ambiente. Os termos de ``caption'' e ``legend'' são
+        funções que podem, em si, ter sua configuração de onde vão
+        aparecer, e como vão aparecer. Esse é o caso, quando utilizamos a
+        classe abntex2. i.e., \verb+\documentclass{abntex2}+. \cite{abntex2}
+
+        O livro, o qual documenta completamente a manuseação de imagens ou
+        mesmo produções de gráficos utilizando, diretamente, o \LaTeX{} é
+        ``The LATEX graphics companion: illustrating documents with TEX
+        and PostScript'' \cite{goossens1997}. A segunda edição é de 2007,
+        e mais atual. Porém, possui 1000 páginas de documentação. É
+        recomendado utilizar esse livro apenas como referência
+        pontual. Isto é, procurar no sumário qual assunto desejamos nos
+        aprofundar, pontualmente.
+
+
+        %%%%% \includegraphics{../myhexagon.sty}
+
+        \subsubsection{Tikz}
+
+        Como disse,  na \autoref{sc1:cor}, muitos pacotes utilizam do
+        pacote tikz para manusear e definir imagens. Utilizando ele
+        diretamente, podemos fazer gráficos, como esse:
+
+        \vspace{0.3}
+
+
+        \begin{figure}[!htb]
+          \begin{center}
+            \caption{ \label{fig:tikz} Funções $((\ln(x+1) \times \sin{x}) / 2)$ e $\sin{x}$}
+            \begin{tikzpicture}[yscale=1.5]
+              \draw [help lines, ->, black, thick] (0,0) -- (7.9,0);
+              \draw [help lines, ->, black, thick] (0,-1.1) -- (0,1.5);
+              \draw[step=.4cm,gray,very thin]  (0,-1) grid (7.9,1.3);
+              % \draw grid;
+              \draw [blue!70!black,domain=0:2.5*pi] plot (\x, {(sin(\x r)* ln(\x+1))/2});
+              \draw [red,domain=0:2.5*pi] plot (\x, {sin(\x r)});
+              % \draw [blue, domain=pi:2*pi] plot (\x, {cos(\x r)*exp(\x/exp(2*pi))});
+            \end{tikzpicture}
+            \legend{Em vermelho, temos $\sin{x}$ e em azul  $(\ln(x+1) \times
+              \sin{x}) / 2)$.}
+            \note{Fonte: o autor.}
+          \end{center}
+        \end{figure}
+
+        \clearpage
+
+        \subsubsection{Código da imagem Tikz}
+        \vspace{0.3cm}
+
+        Para gerar a \autoref{fig:tikz}, utilizou-se do código,
+
+
+
+        \begin{verbnobox}[\fontsize{10.5pt}{10.5pt}\selectfont]
+          \begin{figure}[!htb]
+            \begin{center}
+              \caption{\label{fig:tikz} Funções $((\ln(x+1) \times \sin{x}) / 2)$ e $\sin{x}$}
+              \begin{tikzpicture}[yscale=1.5]
+                \draw [help lines, ->, black, thick] (0,0) -- (7.9,0);
+                \draw [help lines, ->, black, thick] (0,-1.1) -- (0,1.5);
+                \draw[step=.4cm,gray,very thin]  (0,-1) grid (7.9,1.3);
+                % \draw grid;
+                \draw [blue!70!black,domain=0:2.5*pi] plot (\x, {(sin(\x r)* ln(\x+1))/2});
+                \draw [red,domain=0:2.5*pi] plot (\x, {sin(\x r)});
+                % \draw [blue, domain=pi:2*pi] plot (\x, {cos(\x r)*exp(\x/exp(2*pi))});
+              \end{tikzpicture}
+              \legend{Em vermelho, temos $\sin{x}$ e em azul  $(\ln(x+1) \times
+                \sin{x}) / 2)$.}
+              \note{Fonte: o autor.}
+            \end{center}
+          \end{verbnobox}
+
+          A documentação do pacote Tikz, integral, pode ser encontrada
+          \href{http://linorg.usp.br/CTAN/graphics/pgf/base/doc/pgfmanual.pdf}{aqui}
+          (acessado pelo CTAN).
+
+
+          \subsection{Tabelas}
+          Discutiremos as tabelas, em geral, e a formatação de tabelas como
+          prescrita pelas normas ABNT.
+
+          \subsubsection{O Ambiente Tabular}
+
+          São muitas as maneiras de se estilizar uma tabela. Podemos ter tabelas
+          com mais cara de artigo, como essa,
+
+          \vspace{3mm}
+
+          \begin{table}[htb]
+            \begin{center}
+
+              \ABNTEXfontereduzida
+
+              \caption[<como aparece escrito lista de tabelas>]{\label{tab:formal} Formatação Tipográfica, modelo de
+                tabela genérica}
+
+              \begin{tabular}{m{2.6cm}|m{4.0cm}|m{2.25cm}|m{3.40cm}}
+                % \hline
+                \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em \LaTeX{}es} & \textbf{Alternativamente}\\
+                \hline
+                Serif   & {\rmfamily\textbf{R}o\textbf{m}ana} & \verb+{\rmfamily}+  & \verb+\textrm{}+ \\
+                \hline
+                Sans Serif &  {\sffamily{\textbf{S}ans Serif\textbf{f}} & \verb+{\sffamily}+  & \verb+\textsf{}+\\
+                \hline
+                Type Writer & {\ttfamily{\textbf{T}ype Wri\textbf{t}er}}  & \verb+{\ttfamily}+ & \verb+\texttt{}+\\
+                \hline
+              \end{tabular}
+              \legend{Fonte: o autor}
+
+            \end{center}
+          \end{table}
+
+          \vspace{3mm}
+
+          Ou, com mais cara de que estaria num material didático, ou
+          apresentação de slides,
+
+          \vspace{3mm} %%Espaço vertical
+
+          \begin{tcolorbox}[tabulars={@{\extracolsep{\fill}\hspace{5mm}}lrrrrr@{\hspace{5mm}}},
+            boxrule=0.5pt,title=Formatação tipográfica \label{tab:didatica}]
+
+            \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em \LaTeX{}es} & \textbf{Alternativamente}\\
+            \hline \hline
+            Serif                             & {\rmfamily
+              \textbf{R}o\textbf{m}ana} & \verb+{\rmfamily}+  & \verb+\textrm{}+ \\\hline
+            Sans Serif                  &  {\sffamily{\textbf{S}ans
+                Seri\textbf{f}} & \verb+{\sffamily}+  & \verb+\textsf{}+\\\hline
+              Type Writer                & {\ttfamily{\textbf{T}ype
+                  Wri\textbf{t}er}}  & \verb+{\ttfamily}+ & \verb+\texttt{}+
+            \end{tcolorbox}
+
+            \vspace{3mm} %Espaço vertical
+
+            \clearpage
+
+            \noident A \autoref{tab:formal} é feita com a composição dos ambientes
+            {\rmfamily{table}} e {\rmfamily {tabular}},
+
+\begin{verbatim}
+\begin{table}[opções-de-disposição-espacial]
+  (texto)
+  \begin{tabular}[partições]
+    (...)
+  \end{tabular}
+  (texto)
+\end{table}
+\end{verbatim}
+
+            O ambiente table é respontável por dispor os elementos dentro de seu
+            espaço. E, o ambiente tabular é a construção gráfica da tabela, em
+            si. As opções-de-disposição-espacial são h,t,b de
+            (h)ere,(t)op,(b)ottom, e podem se combinadas. A opção ``!'' toma conta
+            de ``forçar'' a tabela ficar aonde você requisitou. Geralmente, se usa
+            !htb para que a tabela fique aonde se escreveu, no \LaTeX{}, seu
+            ambiente.
+
+            As partições de tabular é o que explica como se quer particionar a
+            tabela, bem como, dentro dela, como se quer disposicionar os elementos
+            os quais constituem os dados da tabela.
+
+            Por exemplo,
+
+\begin{verbatim}\begin{tabular}[c|c|c]\end{verbatim}
+
+ será uma tabela com 3 elementos, e todos centralizados, com linhas verticais ente o primeiro e o segundo, e o
+                    segundo e terceito elementos. Opções possíveis são l, c, r, de [l]eft, [c]enter,
+                    [r]ight. Ou seja, respectivamente, esquerdo-justificado,
+                    centro-justificado, ou direito-justificado. Pode-se também especificar
+                    o tamanho requerido para cara elemento dentro da
+                    tabela, com \verb+p{<tamanho>}+,
+                    \verb+m{<tamanho>}+, \verb+b{<tamanho>}+. Esses
+                    além de especificar o tamanho de cada espaço alocado para cada
+                    elemento, também alinham o texto dos elementos com a
+                    paragrafação superior, central, ou inferior. Isto é to(p),
+                    (m)iddle e [b]ottom \cite{wiki2015}.
+
+                    Vejamos o código de \autoref{tab:formal},
+
+
+\begin{verbnobox}[\fontsize{9.5pt}{9.5pt}\selectfont]
+
+  \begin{table}[htb]
+    \begin{center}
+
+      \ABNTEXfontereduzida
+
+      \caption[<como aparece na lista de tabelas>]{\label{tab:formal} Formatação Tipográfica, modelo de
+        tabela genérica}
+
+      \begin{tabular}{m{2.6cm}|m{4.0cm}|m{2.25cm}|m{3.40cm}}
+        % \hline
+        \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em \LaTeX{}es} & \textbf{Alternativamente}\\
+        \hline
+        Serif & {\rmfamily\textbf{R}o\textbf{m}ana} & \verb+{\rmfamily}+  & \verb+\textrm{}+ \\
+        \hline
+        Sans Serif & {\sffamily{\textbf{S}ans Serif\textbf{f}} & \verb+{\sffamily}+  & \verb+\textsf{}+\\
+        \hline
+        Type Writer & {\ttfamily{\textbf{T}ype Wri\textbf{t}er}}  & \verb+{\ttfamily}+ & \verb+\texttt{}+\\
+        \hline
+      \end{tabular}
+      \legend{Fonte: o autor}
+
+    \end{center}
+  \end{table}
+\end{verbnobox}
+
+
+                    *Obs.: as opções \verb+m{<tamanho>}+, \verb+b{<tamanho>}+, para serem
+                    utilizadas, necessitam do pacote \textit{array} no preâmbulo.
+
+                    \clearpage
+                    A \autoref{tab:didatica}, no caso, foi feita utilizando-se o
+                    pacote \verb+\usepackage{tcolorbox}+.
+
+                    O seu comando, integral é,
+
+\begin{verbatim}
+\begin{tcolorbox}[
+  tabulars={@{\extracolsep{\fill}\hspace{5mm}}lrrrrr@{\hspace{5mm}}},
+  boxrule=0.5pt,title=Formatação tipográfica\label{tab:didatica}
+  ]
+
+  \textbf{Pretendemos} & \textbf{Temos} & \textbf{Em
+    \LaTeX{}es} & \textbf{Alternativamente}\\\hline \hline
+
+
+  Serif & {\rmfamily\textbf{R}o\textbf{m}ana} &
+  \verb+{\rmfamily}+  & \verb+\textrm{}+ \\\hline
+
+  Sans Serif &  {\sffamily{\textbf{S}ans Serif\textbf{f}} &
+    \verb+{\sffamily}+  & \verb+\textsf{}+\\\hline
+
+    Type Writer & {\ttfamily{\textbf{T}ype Wri\textbf{t}er}}
+    & \verb+{\ttfamily}+ & \verb+\texttt{}+
+  \end{tcolorbox}
+
+\end{verbatim}
+
+                           \subsection{Tabela ABNT}
+
+                           A Associação Brasileira de Normas Técnicas
+                           prescreve que se redija a tabela, como as
+                           do IBGE. Em \LaTeX{}, essa formatação é a
+                           seguinte \cite{ibge1993},
+
+                           \begin{table}[htb]
+
+                             \IBGEtab{%
+
+                               \caption{Um Exemplo de tabela alinhada que pode ser longa
+                                 ou curta, conforme padrão IBGE.}%
+                               \label{tab:ibge}
+                             }{%
+                               \begin{tabular}{ccc}
+                                 \toprule
+                                 Nome & Nascimento & Documento \\
+                                 \midrule \midrule
+                                 Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+                                 \midrule
+                                 João Souza & 11/11/2111 & 211.111.111-11 \\
+                                 \midrule
+                                 Laura Vicuña & 05/04/1891 & 3111.111.111-11 \\
+                                 \bottomrule
+                               \end{tabular}%
+                             }{%
+                               \fonte{\cite{abntex2modelo-artigo}}%
+                             }
+
+                           \end{table}
+
+                    Essa, portanto, é a tabela modelo IBGE, \autoref{tab:ibge}.
+
+                    \clearpage
+
+                    \subsubsection{Código Tabela-Canônica IBGE}
+                    \vspace{4mm}
+\begin{verbatim}
+\begin{table}[htb]
+
+  \IBGEtab{%
+
+    \caption{Um Exemplo de tabela alinhada que pode ser longa
+      ou curta, conforme padrão IBGE.}%
+    \label{tab:ibge}
+  }{%
+    \begin{tabular}{ccc}
+      \toprule
+      Nome & Nascimento & Documento \\
+      \midrule \midrule
+      Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+      \midrule
+      João Souza & 11/11/2111 & 211.111.111-11 \\
+      \midrule
+      Laura Vicuña & 05/04/1891 & 3111.111.111-11 \\
+      \bottomrule
+    \end{tabular}%
+  }{%
+    \fonte{\cite{abntex2modelo-artigo}}%
+  }
+
+\end{table}
+\end{verbatim}
+
+\chapterimage{1.png} % Chapter heading image
+\chapter{Fórmulas Matemáticas}}\index{Comandos frequentes}
+}
+
+\section{O comando ``equation''}
+
+Se queremos utilizar escritos matemáticos na linha em que estamos
+escrevendo, assim,  $x_1, x_2, x_3, \: \ldots$, usamos o símbolo \$
+(cifrão). Portanto, o que havia acabado de escrever é,
+
+\begin{verbatim}
+$x_1, x_2, x_3, \ldots$
+\end{verbatim}
+
+Os subescritos sempre são feitos com o símbolo ``\_''(barra inferior). Superescritos,
+com \verb+^+ (acento circunflexo). Isto é, $x^1_1, x_2^2, x_3^3,
+\ldots$, os superecritos podem ser obtidos dessa forma, irrespectivo
+da ordem de \_ ou \verb_^_.
+
+\begin{verbatim}
+$x^1_1, x_2^2, x_3^3, \ldots$
+\end{verbatim}
+\noident O comando  \verb+\ldots+ é uma forma de se escrever três pontos,
+como uma reticiências.
+
+Para escrevermos uma equação de forma espaçada e centralizada, no
+texto, utilizamos um ambiente, \verb+\begin{equation}+.
+
+  \begin{equation}
+    \label{eq:n1}
+    \mathlarger{ I \: = \: \int_{a}^{b}{\frac{x^2}{x^2+1}\mathrm{d}x }}
+  \end{equation}
+
+  Geralmente, quando quisermos escrever expressões matemáticas, vamos
+  querer chamar no preâmbulo o pacote amsmath\footnote{É necessário carregar o pacote
+    \texit{amsmath} para tipografar o símbolo de integral}, para que
+  tenhamos certeza que os símbolos serão tipografados corretamente.
+  Para referenciarmos uma equação, usa-se, como em qualquer outro
+  ambiente o comando \verb+\label{}+, a partir dele, pode-se
+  referenciar qualquer ambiente. Por exemplo: \autoref{eq:n1}.
+
+  \clearpage
+
+  \subsection{Algumas equações e suas formatações}
+
+  A equação \autoref{eq:n1}, foi escrita com o seguinte código,
+
+\begin{verbatim}
+ \begin{equation}
+   \label{eq:n1}
+   \mathlarger{ I \: = \: \int_{a}^{b}{ \frac{x^2}{x^2+1} \mathrm{d}x}}
+ \end{equation}
+\end{verbatim}
+
+  para que referiramos a ela, escrevemos
+  \verb+\autoref{eq:n1}+. \verb+\mathlarger{}+ faz seu argumento
+  aumentar de tamanho. É um comando do pacote ``relsize''.
+
+  \subsubsection{Limite fundamental do $\mathbf{\sin{\theta}}$}
+
+  \begin{equation}
+    \lim_{\theta \to 0}{\frac{sin{\theta}}{\theta}}=1
+  \end{equation}
+
+  Com código,
+
+\begin{verbatim}
+ \begin{equation}
+   \lim_{\theta \to 0}{\frac{sin{\theta}}{\theta}}=1
+ \end{equation}
+\end{verbatim}
+
+  Aqui, utiliza-se o comando de fração, o qual recebe dois
+  argumentos, ``\verb+\frac{}{}+'' e ``\verb+\to+'' o qual é a seta
+  do limite.
+
+  \subsubsection{Sistema de equações}
+
+  \begin{equation}
+    \label{eq:n711}
+    \begin{cases}
+      \dot{x}(t) = (n-m) x(t) \\
+      \dot{y}(t) = (n-m) y(t) + rn[x(t) - y(t)] \\
+    \end{cases}
+  \end{equation}
+
+  O qual o código é,
+
+\begin{verbatim}
+\begin{equation}
+  \label{eq:n711}
+  \begin{cases}
+    \dot{x}(t) = (n-m) x(t) \\
+    \dot{y}(t) = (n-m) y(t) + rn[x(t) - y(t)] \\
+  \end{cases}
+\end{equation}
+\end{verbatim}
+
+  Aqui utilizamos o ambiente ``cases'', para que as equações fiquem
+  alinhas a cada quebra de linhas, \verb+\\+, e para que as chaves sejam
+  grafadas. Além do mais, \verb+\dot{}+ transcreve a derivada temporal
+  da variável, notação introduzida por Newton. Isto é, um ponto sob a
+  variável. Se quissésemos representar uma derivada segunda em relação
+  ao tempo, poderíamos escrever \verb+\ddot+ etc.
+
+
+  \subsubsection{Passagens matemáticas com omissão de termos}
+
+  A derivada derivada de uma fração,
+  \begin{equation}
+    \begin{split}
+      &\frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x} =
+      \frac{\mathrm{d} (f(x) g(x)^{-1})}{{\mathrm d}x}\\ %%Primeira Linha
+      \Leftrightarrow  & \quad \quad \quad = f'(x) g(x)^{-1}  +
+      f(x) [-1 g'(x) g(x)^{-2}] \\ %% segunda linha
+      \Leftrightarrow  & \quad \quad \quad =  \frac{f'(x)}{g(x)} \quad + \quad
+      \frac{- f(x) g'(x)}{g(x)^{2}}\\ %%terceira linha
+      \therefore &  \frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x}
+      = \frac{f'(x)g(x) - f(x) g'(x)}{g(x)^{2}} \qed \\ %% quarta linha
+    \end{split}
+  \end{equation}
+
+  Essas passagens são escritas, em latex, da seguinte forma,
+
+\begin{verbatim}
+\begin{equation}
+  \begin{split}
+    &\frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x} =
+    \frac{\mathrm{d} (f(x) g(x)^{-1})}{{\mathrm d}x}\\ %%Primeira Linha
+    \Leftrightarrow  & \quad \quad \quad = f'(x) g(x)^{-1}  +
+    f(x) [-1 g'(x) g(x)^{-2}] \\ %% segunda linha
+    \Leftrightarrow  & \quad \quad \quad =  \frac{f'(x)}{g(x)} \quad + \quad
+    \frac{- f(x) g'(x)}{g(x)^{2}}\\ %%terceira linha
+    \therefore &  \frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x}
+    = \frac{f'(x)g(x) - f(x) g'(x)}{g(x)^{2}} \qed \\ %% quarta linha
+  \end{split}
+\end{equation}
+\end{verbatim}
+
+  Vamos dissecar as partes que compõe essa expressão, para que
+  dismistifiquemos a aparente dificuldade de ler o que foi
+  feito. Primeiro, a expressão,
+
+  \begin{equation}
+    \frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x}
+  \end{equation}
+
+  é uma fração de uma fração. Isto é, teremos que escrever
+  \verb+\frac{\frac{}{}}{}+. O código é,
+
+\begin{verbatim}
+\begin{equation}
+  \frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm d}x}
+\end{equation}
+\end{verbatim}
+
+  \verb+\mathrm{d}+ é a expressão para escrever o ``d'', da derivada, de
+  forma serifada, mais próximo de como é, de fato, grafada. De resto,
+  colocamos a fração $\frac{f(x)}{g(x)}$ (\verb+\frac{f(x)}{g(x)}+)
+  dentro de outra fração. E, note que não importa o tamanho da expressão
+  das frações, elas são formatadas corretamente. Isso é, na mesma linha,
+  escrevemos um denominador muito maior que o denominador,
+
+  \begin{equation}
+    \frac{\mathrm{d} (f(x) g(x)^{-1})}{{\mathrm d}x}
+  \end{equation}
+  Com código,
+\begin{verbatim}
+    \frac{\mathrm{d} (f(x) g(x)^{-1})}{{\mathrm d}x}
+\end{verbatim}
+
+  Utilizamos, também, dos termos de equivalência lógica
+  $\Leftrightarrow$, \verb+\Leftrightarrow+ e dedução, ou conclusão,
+  $\therefore$, \verb+\therefore+. Usamos de espaços,
+  \verb+\quad+. Existem diversos tipos de espaços matemáticos, dos
+  quais, \quad é o maior. Frações desse espaço de quatro (daí vem
+  ``quad''), têm, em ordem decrescente.
+
+  \vspace{3mm}
+
+  Isto é, [\verb+\; \: \,+] $\Leftrightarrow$ [$\frac{3}{4}$quad,
+  $\frac{2}{4}$quad,  $\frac{1}{4}$quad ].
+
+  \vspace{3mm}
+
+  Por fim, para deixamos as expreções alinhas, como estão, utilizamos o
+  ambiente \verb+\begin{split}(...)+. Ele identifica os termos \verb+&+ dentro
+    da equação, e os alinha, quando compilado. Veja que os sinais
+    lógicos $\Leftrightarrow$ e $\therefore$ estão alinhados com a
+    expressão $\frac{\mathrm{d} (\frac{f(x)}{g(x)})}{{\mathrm
+        d}x}$. Isso foi feito propositalmente, porquanto, simula o
+    comportamento real de como se escreve com papel e caneta.
+
+    Para deixar mais claro ao que se refere,
+
+    \begin{equation}
+      \begin{split}
+        A + (B + C) &= (A + B) + C\\ %%Primeira Linha
+        \Leftrightarrow \qquad  & = (B + A) + C \\ %% segunda linha
+        \Leftrightarrow  \qquad & =  B + (A + C)\\ %%terceira linha
+        \therefore A + (B + C) & = (A + C) + B\qed \\ %% quarta linha
+      \end{split}
+    \end{equation}
+
+    O código é,
+
+\begin{verbatim}
+\begin{equation}
+  \begin{split}
+    A + (B + C) &= (A + B) + C\\ %%Primeira Linha
+    \Leftrightarrow \qquad  & = (B + A) + C \\ %% segunda linha
+    \Leftrightarrow  \qquad & =  B + (A + C)\\ %%terceira linha
+    \therefore A + (B + C) & = (A + C) + B\qed \\ %% quarta linha
+  \end{split}
+\end{equation}
+\end{verbatim}
+
+    **\verb+\qed+ é esse quadradinho preto, $\qed$, o qual significa,
+    \textrm{quod erat demonstrandum}. Ou seja, como queria se
+    demonstrar. E, aparece ao fim de provas. É tradição desde Euclides e
+    Arquimedes. E, mais recentemente, esse quadrado preto, símbolo o qual foi cunhado
+    por Paul Richard Halmos, foi adotado para significar esta frase.
+
+
+    %%%%%%%%%% REFERÊNCIAS %%%%%%%%%%%%%%%%%%%
+    \chapterimage{14.jpg}
+    \bibliography{ref-bib}       %%puxa a bibliografia no diretório do
+    %% arquivo .tex, com nome 'ref-bib' (não
+    %% se põe se escreve a extensão .bib)
+
+  \end{document}
+
+  %%% Local Variables:
+  %%% mode: latex
+  %%% TeX-master: t
+  %%% End:

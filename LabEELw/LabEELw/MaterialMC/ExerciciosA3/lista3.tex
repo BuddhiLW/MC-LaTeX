@@ -1,0 +1,137 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[a4paper,11pt, dvipdfmx]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{movie15}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+% \usepackage{Consolatas}
+\usepackage{yfonts}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+
+\setlist[2]{noitemsep} % sets the itemsep and parsep for all level two lists to 0
+
+\setenumerate{noitemsep} % sets no itemsep for enumerate lists only
+% \begin{enumerate}[noitemsep] % sets no itemsep for just this list
+%   % ...
+% \end{enumerate}
+
+
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usepackage[margin=1in]{geometry}
+\geometry{left=25mm,right=25mm,%
+  bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.1}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+
+\theoremstyle{mytheor}
+\newtheorem{defi}{Definition}
+
+% my own titles
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    \vspace{4ex}
+    { {\fontsize{40}{40}\selectfont \textfrak{\@title}} }
+    \vspace{2ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{6ex}
+  \end{center}
+}
+\makeatother
+%%%
+
+% custom footers and headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{Entrega até 14/05}
+\lfoot{Lista \textnumero{} 1}
+\cfoot{}
+\rfoot{Página \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%
+
+%%% ----------%%%----------%%%----------%%%----------%%%
+
+\usepackage{hyperref}
+
+{%Muda a cor do Sumário, pois são todo links.
+  \hypersetup{
+    colorlinks=true,
+    citecolor= violet,
+    linkcolor=black!85,
+    filecolor=magenta,
+    urlcolor=cyan,
+  }
+
+  %%% ----------%%%----------%%%----------%%%----------%%%
+  %% Animação
+  %\usepackage[loop]{animate}
+ % \usepackage{animate}
+  %\usepackage{media9}
+%  \usepackage{graphicx}
+
+
+  \begin{document}
+
+  \title{Lis:ta 3}
+
+  \author{\indent  Prof.: Pedro G. Branquinho, EEL-USP. \\
+    Orient.: Katia C. G. Candioto.}
+
+  \date{16/05/20 - 24/05/20}
+
+  \maketitle
+
+  \section*{Problema 1}
+\textbf{1.(a) Reproduza uma apresentação de dois, ou mais, frames.} O
+primeiro frame deve ser sua capa de aprensentação, com seu nome e e-mail
+usp, com algum título que lhe agrade. O template de
+\href{https://github.com/26-55-87-BuddhiLW/MC-LaTeX/tree/master/Exemplos/ArquivosCurso/ModApresent}{apresentação}
+pode lhe ajudar.
+
+\vspace{10mm}
+
+\begin{flushleft}
+\textbf{1.(b) No(s) seguinte(s) frame(s)} devem haver,
+
+\begin{itemize}
+\item uma caixa, do pacote tboxcolor;
+\item um ambiente itemize com uma citação, usando \verb+\cite{}+ nas normas ABNT;
+\item uma imagem não distorcida, preferencialmente, dentro de uma caixa.
+\end{itemize}
+
+\end{flushleft}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

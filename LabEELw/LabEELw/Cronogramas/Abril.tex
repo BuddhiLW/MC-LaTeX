@@ -1,0 +1,114 @@
+x%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\documentclass{standalone}
+\usepackage{pgfgantt}
+\usepackage{xcolor}
+\renewcommand{\rmdefault}{ptm}
+\usepackage[scaled=0.92]{helvet}
+% \usepackage{lmodern}
+\usepackage{courier}
+\normalfont % in case the EC fonts aren't available
+\usepackage[T1]{fontenc}
+\parskip=2pt\parindent 0pt
+
+
+\definecolor{orchid}{RGB}{218, 112, 214}
+\definecolor{purple1}{RGB}{144, 5, 133}
+\definecolor{orange1}{RGB}{255, 165, 0}
+
+\definecolor{brisa1}{RGB}{150, 150, 150}
+\definecolor{brisa2}{RGB}{128, 128, 128}
+
+\definecolor{mesa1}{RGB}{188,218,221}
+\definecolor{mesa2}{RGB}{250, 250, 250}
+
+\definecolor{louça1}{RGB}{138, 234, 145}
+\definecolor{louça2}{RGB}{192,192,192}
+
+\definecolor{sid1}{RGB}{255, 127, 0}
+\definecolor{sid2}{RGB}{0, 128, 255}
+
+\definecolor{branqs1}{RGB}{19, 221, 120, 1}
+\definecolor{branqs2}{RGB}{20, 222, 222}
+
+
+
+\begin{document}
+
+\begin{figure}[!bth]
+
+  \begin{center}
+
+    \begin{ganttchart}[
+      vgrid={*{2}{black!40, dashed}, *{1}{purple, thick}},
+      hgrid={1*{grey}},
+      title/.append style=%
+      {fill=blue!12, rounded corners=0.4mm, drop shadow},
+      title label font=\color{black!70}\bfseries,
+      title height=0.8,
+      title top shift=0.2,
+      % title left shift=0.2,
+      % title right shift=-0.1,
+      chart element start border=right]
+      {1}{30}
+      \gantttitle[title/.style={draw=black,
+        fill=white}]{\LARGE{\textbf{\fontfamily{put}\selectfont Abril}}}{30} \\
+
+      \gantttitlecalendar{day} \\[grid]
+
+      %%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%
+
+      \ganttgroup[group/.style={draw=black, outer
+        color=branqs1!10, inner color=branqs2!50}]{\LARGE{\textsc{{Em andamento}}}}{0}{30} \\
+
+      \ganttbar[bar/.style={draw=black, outer
+        color=brisa2, inner color=brisa1}]{\large{Materiais aula 3 e 4}}{5}{10} \ganttbar[bar/.style={draw=black, outer
+        color=brisa2, inner color=brisa1}]{}{17}{22}\\
+
+      \ganttbar[bar/.style={draw=black, outer
+        color=mesa1, inner color=mesa2}]{\large{Material Online}}{15}{30} \\
+
+      \ganttbar[bar/.style={draw=black!80, outer
+        color=black!80, inner color=black!70}]{\large{Relatório}}{0}{5} \\
+
+      \ganttbar[bar/.style={draw=black, outer
+        color=louça1, inner color=louça2}]{\large{Elaboração de Exercícios}}{20}{30}
+
+      %%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%
+    \end{ganttchart}
+  \end{center}
+\end{figure}
+
+
+\vspace{1cm}
+\begin{large}
+  {Nota 1: a ``Materiais das aulas 3 e 4'' desenvolvimento de
+    templates os quais utilizam os conceitos de desenvolvimento de
+    comando e estruturação de pacotes - template de tarefa, notas,
+    livros, agenda.
+
+    \vspace{0.7cm}
+
+    Nota 2: a secção ``Material Online'' organizar o material de
+    forma a ser utilizado sem necessidade de um tutor. Adaptar as
+    explicações, exercícios e materias para a forma  mais auto-explicativa quanto possível.
+
+    \vspace{0.7cm}
+
+    Nota 3: no ``Relatório'' foi atualizado o cronograma final do relatório, integrando
+    as tarefas de Março e Abril.
+\end{large}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
