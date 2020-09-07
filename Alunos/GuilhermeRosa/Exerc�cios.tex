@@ -1,0 +1,138 @@
+
+
+\documentclass[12pt]{abntex2}
+\usepackage{amsmath}
+\usepackage{movie15}
+\usepackage{graphics,graphicx}
+\usepackage{inputenc}
+
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+
+
+\setlength\parindent{0pt} %% Do not touch this
+
+%% -----------------------------
+%% TITLE
+%% -----------------------------
+\title{Lista 2} %% Assignment Title
+
+\author{Guilherme R. R. Rosa\\ %% Student name
+  Mini-Curso {\LaTeX} \\ %% Code and course name
+  \textsc{Universidade de São Paulo}
+}
+
+\date{\today} %% Change "\today" by another date manually
+%% -----------------------------
+%% -----------------------------
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+% --------------------------
+% Start here
+% --------------------------
+
+% %%%%%%%%%%%%%%%%%%%
+
+
+	Problema 1 \\
+	2.a
+	
+	\begin{equation}
+	\label{eq:n11}
+	\autoref{eq:n11}
+	\begin{cases}
+	\frac{\mathrm{d}x}{\mathrm{d}t} = \sigma(y-x) \\
+	\frac{\mathrm{d}y}{\mathrm{d}t} = x(\rho-z) - y \\
+	\frac{\mathrm{d}z}{\mathrm{d}t} = xy - \beta z
+	\end{cases}
+	\end{equation}
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	1.a
+	
+	\begin{equation}
+	\label{eq:n21}
+	\autoref{eq:n21}
+	\begin{cases}
+	F(k)= \frac{1}{2\pi}\int_{-\infty}^\infty s(x) e^{-ikx} \mathrm{d}x
+	\end{cases}
+	\end{equation}
+	\\ \\ \\ \\
+	\\ \\ \\ \\
+	\\ \\ \\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Problema 2 \\
+     
+     \begin{table}[htb]
+     	\IBGEtab{%
+     		\caption{Casos de Covid-19 na região.}%
+     		\label{tab:ibge}
+     	}{%
+     		\begin{tabular}{cccc}
+     			\toprule
+     			Cidade & Casos (Suspeitos) & Casos(Confirmados) & Mortes  \\
+     			\midrule \midrule
+     			Holambra & 300                       & 15           & 3 \\
+     			\midrule
+     			Brotas   & 245                       & 9            & 1 \\
+     			\midrule
+     			Socorro  & 138                       & 2            & 0 \\
+     			\bottomrule
+     		\end{tabular}%
+     	}{%
+     		\fonte{?}%
+     	}
+     \end{table} 
+
+ \begin{table}[htb]
+ 	\begin{center}
+ 		\ABNTEXfontereduzida
+ 		\caption{\label{tab:formal} Casos de Covid-19 na região}
+ 		\begin{tabular}{m{2.6cm}|m{4.0cm}|m{2.25cm}|m{3.40cm}}
+ 			\hline
+ 			{Cidade} & {Casos (Suspeitos)} & {Casos (Confirmados)} & {Mortes}\\
+ 			\hline
+ 			Holambra & {300} & {15} & {3} \\
+ 			\hline
+ 			Brotas   & {245}  & {9}  & {1} \\
+ 			\hline
+ 			Socorro  & {138}   & {2} & {0} \\
+ 				\hline
+ 			\end{tabular}
+ 			\legend{Fonte:?}
+ 		\end{center}
+ 	\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+
+Problema 3
+
+\begin{figure}[htb]
+	\begin{center}
+		\caption{\label{fig:logo}{\LaTeX} Logo}
+		\includegraphics[width=0.85 \textwidth, height=0.65 \textheight]{logo.png}
+		\legend{Fonte: https://student.uis.no/library/classes/bachelor/latex/}
+	\end{center}
+\end{figure}
+ 
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

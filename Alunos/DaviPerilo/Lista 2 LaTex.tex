@@ -1,0 +1,110 @@
+\documentclass[
+12pt, %Tamanho da fonte
+a4paper, %Tamanho do papel
+brazil, %Língua do documento
+oneside, %Impressão Frente e Verso
+]{abntex2}
+
+%Pacotes
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{media9}
+\usepackage{array}
+\usepackage{multimedia}
+\usepackage{animate}
+\begin{document}
+
+\centering Problema 1 - A
+
+\begin{equation}
+\begin{cases}
+	\frac{\mathrm{d}x}{\mathrm{d}t}=\sigma(y-x) \\
+	\frac{\mathrm{d}y}{\mathrm{d}t}=x(\rho-z)-y \\
+	\frac{\mathrm{d}z}{\mathrm{d}t}=xy-\beta z \\
+\end{cases}
+\end{equation}
+
+\vspace{0,5cm}
+
+\centering Problema 1 - B
+
+\begin{equation}
+F(k)=\frac{1}{2\pi}\int_{-\infty}^{\infty} s(x)e^{-ikx}\mathrm{d}x
+\end{equation}
+
+\vspace{0,5cm}
+
+\centering Problema 2 - A
+
+\begin{table}[htb]
+
+	\IBGEtab{%
+
+		\caption{Número de alunos por sala}%
+		\label{Tabela 1}
+}{%
+		\begin{tabular}{cccc}
+			\toprule
+			 Nº da Sala & 1º Semestre & 2º Semestre & 3º Semestre \\
+			\midrule\midrule
+			 Sala 101 & 66 & 41 & 71 \\
+			 \midrule
+			 Sala 102 & 56 & 51 & 61 \\
+			 \midrule
+			 Sala 103 & 47 & 36 & 50 \\
+			 \midrule
+			 Sala 104 & 43 & 35 & 47 \\
+			 \midrule
+			 Sala 105 & 40 & 32 & 45 \\
+			 \bottomrule
+		\end{tabular}%
+}{%
+\fonte{Produzido pelo autor}%
+}
+
+\end{table}
+
+\vspace{0,5cm}
+
+\newpage
+
+\centering Problema 2 - B
+
+\begin{table}[htb]
+
+\caption{Número de alunos por sala}
+\label{Tabela 2}
+
+\centering\begin{tabular}{cccc}
+		\toprule
+		Nº da Sala & 1º Semestre & 2º Semestre & 3º Semestre \\
+		\midrule
+		Sala 101 & 66 & 41 & 71 \\
+		\midrule
+		Sala 102 & 56 & 51 & 61 \\
+		\midrule
+		Sala 103 & 47 & 36 & 50 \\
+		\midrule
+		Sala 104 & 43 & 35 & 47 \\
+		\midrule
+		Sala 105 & 40 & 32 & 45 \\
+		\bottomrule
+	\end{tabular}
+\legend{Fonte: O autor}
+\end{table}
+
+\vspace{0,5cm}
+
+\newpage
+
+\centering Problema 3
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[height=0.65\textheight,width=0.85\linewidth]{C:/Users/Davip/Downloads/LaTex.jpg}
+\end{center}
+\end{figure}
+
+\end{document}

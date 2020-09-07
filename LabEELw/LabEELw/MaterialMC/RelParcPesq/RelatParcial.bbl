@@ -1,0 +1,79 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[ABNTEX 2012]{abntex2012}
+\abntrefinfo{ABNTEX}{ABNTEX}{2012}
+{ABNTEX, E. A classe abntex2: Modelo can{\^o}nico de trabalhos acad{\^e}micos
+  brasileiros compat{\'\i}vel com as normas abnt nbr 14724: 2011, abnt nbr
+  6024: 2012 e outras.[sl], 2012.
+\emph{http://code. google. com/p-/abntex2/>. Citado}, v.~2, p.~2, 2012.}
+
+\bibitem[Araujo 2018]{araujoclasse}
+\abntrefinfo{Araujo}{ARAUJO}{2018}
+{ARAUJO, L.~C. A classe abntex2.
+\emph{Documentos t{\'e}cnicos e cient{\'\i}ficos brasileiros}, 2018.}
+
+\bibitem[Ariely et al. 2009]{ariely2009large}
+\abntrefinfo{Ariely et al.}{ARIELY et al.}{2009}
+{ARIELY, D. et al. Large stakes and big mistakes.
+\emph{The Review of Economic Studies}, Wiley-Blackwell, v.~76, n.~2, p.
+  451--469, 2009.}
+
+\bibitem[Deci, Olafsen e Ryan 2017]{deci2017self}
+\abntrefinfo{Deci, Olafsen e Ryan}{DECI; OLAFSEN; RYAN}{2017}
+{DECI, E.~L.; OLAFSEN, A.~H.; RYAN, R.~M. Self-determination theory in work
+  organizations: The state of a science.
+\emph{Annual Review of Organizational Psychology and Organizational Behavior},
+  Annual Reviews, v.~4, p. 19--43, 2017.}
+
+\bibitem[Goossens, Mittelbach e Samarin 1994]{goossens1994}
+\abntrefinfo{Goossens, Mittelbach e Samarin}{GOOSSENS; MITTELBACH;
+  SAMARIN}{1994}
+{GOOSSENS, M.; MITTELBACH, F.; SAMARIN, A. \emph{The LATEX companion}. [S.l.]:
+  Addison-Wesley Reading, 1994. v.~1.}
+
+\bibitem[Greenwade 1993]{greenwade1993comprehensive}
+\abntrefinfo{Greenwade}{GREENWADE}{1993}
+{GREENWADE, G.~D. The comprehensive tex archive network (ctan).
+\emph{TUGBoat}, Addison-Wesley, v.~14, n.~3, p. 342--351, 1993.}
+
+\bibitem[Haralambous 2007]{haralambous2007}
+\abntrefinfo{Haralambous}{HARALAMBOUS}{2007}
+{HARALAMBOUS, Y. \emph{Fonts \& encodings}. [S.l.]: " O'Reilly Media, Inc.",
+  2007.}
+
+\bibitem[Hendijani et al. 2016]{hendijani2016intrinsic}
+\abntrefinfo{Hendijani et al.}{HENDIJANI et al.}{2016}
+{HENDIJANI, R. et al. Intrinsic motivation, external reward, and their effect
+  on overall motivation and performance.
+\emph{Human Performance}, Taylor \& Francis, v.~29, n.~4, p. 251--274, 2016.}
+
+\bibitem[Ignat 2005]{ignat2005}
+\abntrefinfo{Ignat}{IGNAT}{2005}
+{IGNAT, D. Word to latex for a large, multi-author scientific paper.
+\emph{TPJ}, v.~2005, n.~03, 2005.}
+
+\bibitem[Knuth 1986]{knuth1986}
+\abntrefinfo{Knuth}{KNUTH}{1986}
+{KNUTH, D.~E. \emph{TEX: the Program}. [S.l.]: Addison-Wesley, 1986.}
+
+\bibitem[Lamport 1994]{lamport1994}
+\abntrefinfo{Lamport}{LAMPORT}{1994}
+{LAMPORT, L. \emph{LATEX: a document preparation system: user's guide and
+  reference manual}. [S.l.]: Addison-wesley, 1994.}
+
+\bibitem[Tantau, Wright e Miletic 2010]{tantau2010}
+\abntrefinfo{Tantau, Wright e Miletic}{TANTAU; WRIGHT; MILETIC}{2010}
+{TANTAU, T.; WRIGHT, J.; MILETIC, V. \emph{The LaTeX Beamer Class}. 2010.}
+
+\bibitem[Thoma 2013]{martin2013}
+\abntrefinfo{Thoma}{THOMA}{2013}
+{THOMA, M. \emph{LaTeX Beamer}. 2013. Thoma Martin.
+Dispon{\'\i}vel em: \url{https://martin-thoma.com/latex-beamer/}. Acesso em: 19
+  Jul 2020.}
+
+\end{thebibliography}

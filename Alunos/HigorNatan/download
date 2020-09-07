@@ -1,0 +1,64 @@
+\documentclass{beamer}
+
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage[utf8]{inputenc}
+\usetheme{AnnArbor}
+
+\usebeamercolor{dove}
+
+\author[Higor Natan ]{Higor Natan Alves Ferreira \\
+	\text{\scriptsize{higornatatanusp2019.com@usp.br}}}
+\title[Estudo sobre Óbitas]{ UM ESTUDO SOBRE A DETERMINAÇÃO DE ÓRBITAS A PARTIR DE OBSERVAÇÕES}
+\logo{\includegraphics[scale=0.03]{logo}}
+
+\date{\scriptsize{São Paulo, SP} \\  EEL - DEMAR - USP}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+\begin{frame}
+\begin{figure}
+	\begin{block}{ Óbitas }
+	As órbita são as trajetória de qualquer corpo celeste.
+	\centering
+	\includegraphics[scale= 0.3]{sistemasolar} \\
+	\caption{Fonte:\cite{ferrer}}
+	\end{block}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}
+	
+	\begin{tcolorbox}[colback=black!5!white,colframe=black!70!white,title=Tipos de Órbitas]
+Existem basicamente 4 tipos de órbitas, que são as que a maioria viu em geometria analítica \cite{vernel}. Essas órbitas são:
+\begin{itemize}
+	\item<1-> Circular 
+	\item <2-> Elípticas 
+	\item<3-> Parabólicas 
+	\item<4-> Hiperbólicas 
+\end{itemize}
+	\end{tcolorbox}
+
+
+\end{frame}
+	
+
+
+\begin{frame}{Bibliografia}
+	\begin{thebibliography}{9}
+	\bibitem{vernel} Greene, Nick \emph{Explore Johannes Kepler's Laws of Motion}, 2019 Acesso em: https://www.thoughtco.com/kepler-theory-3072267. Acessado no dia 20 de jun,2020.
+	\bibitem{ferrer} Ferrer, Natália \emph{Planetário Órbita Shopping Metropolitano}.Rio de Janeiro, RJ , Brasil 7 de jun de 2017.
+
+
+\end{thebibliography}
+\end{frame}
+
+
+
+
+\end{document}
+

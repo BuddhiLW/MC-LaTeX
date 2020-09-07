@@ -1,0 +1,79 @@
+\documentclass[		
+oneside,		
+a4paper,						
+12pt,
+brazil]{abntex2}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{array}
+\usepackage{tikz}
+
+\begin{document}
+
+
+\textbf{Movimento retilíneo uniforme utilizando o colchão de ar linear Hentsche.}\\
+
+Cada intervalo representa o tempo, com suas devidas variações, gasto pelo móvel entre os sensores do aparelho, que distam 10 cm um do outro.\\
+
+\begin{center}
+ \textbf{Tabela IBGE}
+\end{center}
+
+\begin{table}[h]
+	
+\IBGEtab {
+	\caption{Intervalos de tempo no espaço de 10cm}
+	 }
+{
+
+\begin{tabular} {cccc}
+	\toprule
+	1º intervalo & 2º intervalo & 3º intervalo & 4º intervalo\\
+	\midrule \midrule
+	0,697514s & 0,696571s & 0,692141s & 0,686590\\
+	\hline
+	0,699051s & 0,685728s & 0,691006s & 0,694233s\\
+	\hline
+	0,704789s & 0,710141s & 0,710141s & 0,708058s\\
+	\hline
+	0,690504s & 0,688118s & 0,688118s & 0,692839s\\
+	\hline
+	0,682013s & 0,687569s & 0,687569s & 0,683203s\\
+	\bottomrule
+		
+\end{tabular}
+}
+{\fonte{dados experimentais.} }
+\end{table}
+
+\begin{center}
+	\textbf{Tabela genérica}
+\end{center}
+
+
+\begin{center}
+\begin{tcolorbox}
+	[title=Intervalos de tempo no espaço de 10cm,title filled,center title,hbox]
+	
+\begin{tabular}{c|c|c|c}
+
+	
+	1º intervalo & 2º intervalo & 3º intervalo & 4º intervalo\\
+	\hline\hline
+	0,697514s & 0,696571s & 0,692141s & 0,686590\\
+
+	0,699051s & 0,685728s & 0,691006s & 0,694233s\\
+
+	0,704789s & 0,710141s & 0,710141s & 0,708058s\\
+
+	0,690504s & 0,688118s & 0,688118s & 0,692839s\\
+
+	0,682013s & 0,687569s & 0,687569s & 0,683203s\\
+
+\end{tabular}
+\end{tcolorbox}
+\end{center}
+
+\end{document}

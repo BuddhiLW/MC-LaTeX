@@ -1,0 +1,42 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\usecolortheme{}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[alf]{abntex2cite}
+
+\title{Resolução da Lista 3}
+\subtitle{Minicurso de \LaTeX}
+\author[Vinicius Gabriel]{Vinicius Gabriel Gomes de Albuquerque \\
+	\footnotesize{vinicius.gabriel@usp.br}}
+\date[EEL-USP]{Universidade de São paulo - DEMAR}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+
+\begin{tcolorbox}[colback=blue!20!white,colframe=blue!90!white,title=Resolução da questão 2]
+\begin{itemize}
+\item<1-> Exemplo\cite{jackson2009dna}
+\item<2-> Exemplo
+\end{itemize}
+\begin{center}
+\includegraphics<3->[scale=0.2]{altoforno}
+\end{center}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\bibliography{referencias.bib}
+\end{frame}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

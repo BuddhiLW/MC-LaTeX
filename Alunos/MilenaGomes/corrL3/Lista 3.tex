@@ -1,0 +1,167 @@
+\documentclass{beamer}
+
+%% Pacotes
+\usepackage[utf8]{inputenc}              %%Formatação de acentos
+\usepackage{xcolor}               %%Definição de cores
+\usepackage{calligra}
+
+\usepackage[framemethod=tikz]{mdframed} %%Estilização dos slides
+\usepackage{tcolorbox}                   %%Mudar ambientes de blocos
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10,expansion]{microtype}
+%% Melhorar caligrafia
+\SetTracking{encoding={*}, shape=sc}{0} %Caligrafia de small capitals (smallcaps)
+\usepackage{pifont} %Dingbats (simbolos do itemize)
+\usepackage[alf]{abntex2cite}
+{\usebackgroundtemplate{\includegraphics[width=1\paperwidth, height=1\paperheight]{../Imagens/bb}}
+%% Tema da apresentação
+\color{red}
+\usetheme{CambridgeUS}
+
+
+\mode<presentation>
+
+
+\title[Introdução ao \LaTeX]{\bfseries\Huge{Clube do Livro}}
+\author[Milena Gomes]{\bfseries\textcolor{white}{Milena Gomes da Silva} \\
+\text{\scriptsize{\textcolor{white}{milena.gomes.silva@usp.br}}}}
+
+\date[17.06.2020]
+
+
+
+%%%%%% ~~~~~~~~~ %%%%%%%%
+
+%%%%%%%%%%% Começo do Corpo do Documento %%%%%%%%%%%%%%%%
+
+%%%%%% ~~~~~~~~~ %%%%%%%%
+
+
+\begin{document}
+
+%% Imagem de fundo para a apresentação,
+
+{\usebackgroundtemplate{\includegraphics[width=1\paperwidth, height=1\paperheight]{../Imagens/biblioteca}}
+
+%% Alterar o diretório ''../Imagens/TP.jpg'' para mudar de imagem
+
+
+%%%%%% Primeira slide, utilizando as variáveis author, date etc.
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+
+
+\begin{frame}
+
+\section{O que nos motiva?}
+\frametitle{{\bfseries{O que nos motiva?}}}
+	\begin{tcolorbox}[colback=red!5!white, colframe=red!65!black,
+		title={\sc{\bf{O que lemos?}}}]
+		No Clube do Livro, nós lemos desde romance clássico do século XIX, passando por sci-fi dos anos 80 e chegando até os livros do nosso século.
+	\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\section{O que nos motiva?}
+\frametitle{{\bfseries{O que nos motiva?}}}
+\setbeamercovered{invisible}
+\begin{itemize}[<+->]
+	\item[{\textcolor{red!90!black}{\ding{109}}}]{Ler é interpretar o mundo em que vivemos.} \cite{Paulo}
+	\item[{\textcolor{red!90!black}{\ding{109}}}]{O personagem lia, e ao ler sentia-se limpo e livre de qualquer doença.}
+	\cite{VHM}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\section{Como funciona o Clube do Livro?}
+	\frametitle{\bfseries{Como funciona o Clube do Livro?}}
+	\setbeamercovered{invisible}
+	\begin{itemize}[<+->]
+		\item[{\textcolor{red!90!black}{\ding{109}}}]{Grupo no Telegram}
+		\item[{\textcolor{red!90!black}{\ding{109}}}]{Escolha do livro por enquete}
+		\item[{\textcolor{red!90!black}{\ding{109}}}]{Número determinado de capítulos por semana}
+		\item[{\textcolor{red!90!black}{\ding{109}}}]{Discussão sobre o livro uma vez por semana}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \section{Livros já lidos}
+  \frametitle{\bfseries{Livros já lidos}}
+  \begin{itemize}
+  \item[{\textcolor{red!90!black}{\ding{111}}}]{A Máquina de Fazer Espanhóis} \\
+  \includegraphics[width=0.2\linewidth]{../Imagens/vhm}
+  \item[{\textcolor{red!90!black}{\ding{111}}}]{Jane Eyre}
+  \item[{\textcolor{red!90!black}{\ding{111}}}]{O Filho de Mil Homens}
+  \item[{\textcolor{red!90!black}{\ding{111}}}]{O Nome da Rosa}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\section{Livros já lidos}
+	\frametitle{\bfseries{Livros já lidos}}
+	\begin{itemize}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{A Máquina de Fazer Espanhóis}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{Jane Eyre}\\
+		\includegraphics[width=0.2\linewidth]{../Imagens/je}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Filho de Mil Homens}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Nome da Rosa}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\section{Livros já lidos}
+	\frametitle{\bfseries{Livros já lidos}}
+	\begin{itemize}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{A Máquina de Fazer Espanhóis}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{Jane Eyre}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Filho de Mil Homens}\\
+		\includegraphics[width=0.2\linewidth]{../Imagens/vhm2}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Nome da Rosa}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\section{Livros já lidos}
+	\frametitle{\bfseries{Livros já lidos}}
+	\begin{itemize}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{A Máquina de Fazer Espanhóis}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{Jane Eyre}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Filho de Mil Homens}
+		\item[{\textcolor{red!90!black}{\ding{111}}}]{O Nome da Rosa} \\
+
+		\includegraphics[width=0.2\linewidth]{../Imagens/nm}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+		\section{Nossa próxima leitura}
+	  	\frametitle{\bfseries{Nossa próxima leitura}}
+		\begin{tcolorbox}[colback=red!5!white, colframe=red!65!black,
+			title={\sc{\bf{Os Robôs}}}]
+		\begin{minipage}{.5\linewidth}
+			Um dos mais eminentes cientistas de Solária
+			fora encontrado brutalmente assassinado e  só um Terrestre poderia desvendar o desconcertante  e sombrio mistério. E assim, mesmo contrariados,  os Solarianos pediram o auxílio de um Terrestre.
+			\cite{Is}
+		\end{minipage}
+		\begin{minipage}{0.5\linewidth}
+		\begin{figure}
+			\includegraphics[width=0.4\linewidth]{../Imagens/r}
+		\end{figure}
+		\end{minipage}
+		\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\frametitle{\bfseries{Referências}}
+\bibliography{ref}
+\end{frame}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

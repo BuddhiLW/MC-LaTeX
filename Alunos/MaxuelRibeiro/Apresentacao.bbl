@@ -1,0 +1,13 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Pessoa 2015]{pessoa2015melhores}
+\abntrefinfo{Pessoa}{PESSOA}{2015}
+{PESSOA, F. \emph{Melhores poemas Fernando Pessoa}. [S.l.]: Global Editora e
+  Distribuidora Ltda, 2015.}
+
+\end{thebibliography}

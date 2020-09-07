@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: RelatParcial.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: bib.bib
+I was expecting an "="---line 3 of file bib.bib
+ : @Comment  
+ :           Author = {Lauro C{\'e}sar Araujo},
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 14 entries,
+            6714 wiz_defined-function locations,
+            1273 strings with 11066 characters,
+and the built_in function-call counts, 11391 in all, are:
+= -- 983
+> -- 362
+< -- 62
++ -- 219
+- -- 109
+* -- 788
+:= -- 1578
+add.period$ -- 43
+call.type$ -- 14
+change.case$ -- 127
+chr.to.int$ -- 35
+cite$ -- 13
+duplicate$ -- 624
+empty$ -- 795
+format.name$ -- 516
+if$ -- 2619
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 244
+newline$ -- 68
+num.names$ -- 65
+pop$ -- 326
+preamble$ -- 1
+purify$ -- 52
+quote$ -- 0
+skip$ -- 704
+stack$ -- 1
+substring$ -- 446
+swap$ -- 275
+text.length$ -- 17
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 94
+width$ -- 0
+write$ -- 211
+(There was 1 error message)

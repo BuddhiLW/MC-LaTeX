@@ -1,0 +1,84 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{times}
+\usepackage{array}
+\usepackage{animate}
+\usepackage{amsmath}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc} %escreva o documento diretamente com os acentos
+\usepackage[T1]{fontenc}
+\usepackage{booktabs} %tabela boa
+\usepackage{caption}
+\usepackage{float}
+\begin{document}
+	\centering EXERCÍCIO 1 A
+
+	\begin{equation}
+		\begin{cases}
+		\frac{\mathrm{d}x}{\mathrm{d}t} = \sigma(y-x) \\
+		\frac{\mathrm{d}y}{\mathrm{d}t} = x(-z)-y \\
+		\frac{\mathrm{d}z}{\mathrm{d}t} = xy - \beta z \\
+		\end{cases}
+	\end{equation}
+
+	\centering EXERCÍCIO 1 B
+	\begin{equation}
+	\ F(k) = \frac{\mathrm{1}}{\mathrm{2\pi}} \int_{{-\infty}}^{{\infty}} s(x)e^{-ikt} dx
+	\end{equation}
+	\centering EXERCÍCIO 2
+	\begin{table}[!h]
+		\centering
+		\caption{Índice de Desenvolvimento Humano: Top 5}
+		\begin{tabular}{ccc}
+		\toprule
+			Posição & País & IDH \\
+		\midrule
+			1 & Noruega & 0.955 \\
+			2 & Austrália & 0.938 \\
+			3 & EUA & 0.937 \\
+			4 & Holanda & 0.921 \\
+			5 & Alemanha & 0.920 \\
+		\bottomrule
+		\end{tabular}
+	\vspace{0,1cm}
+		\caption*{Fonte: CBF, 2011}
+	\end{table}
+
+	\begin{table}[h]
+		\centering
+		\caption{ Índice de Desenvolvimento Humano: Top 5}
+		\vspace{0.5cm}
+		\begin{tabular}{r|lr}
+
+			Posição  & País & IDH \\ % Note a separação de col. e a quebra de linhas
+			\hline
+			\vspace{0.1cm}                               % para uma linha horizontal
+			1 & Noruega        &  0.955 \\
+			2 & Austrália      &  0.938 \\
+			3 & EUA            & 0.937 \\
+			4 & Holanda        & 0.921 \\
+			5 & Alemanha       & 0.920 \\           % não é preciso quebrar a última linha
+
+		\end{tabular}
+	\vspace{0,1cm}
+	\caption*{Fonte: UEFA, 2009}
+
+\end{table}
+
+\centering EXERCÍCIO 3
+\begin{figure}[H]
+	\centering
+ % \includegraphics[width = 20.4cm , height = 21.5cm ]{logo}
+	\includegraphics[width=1.2\linewidth, height= 1.2 \linewidth]{logo}
+	\caption{Logo de Lorena}
+\end{figure}
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

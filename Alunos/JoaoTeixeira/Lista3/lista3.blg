@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7400 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: lista3.aux
+The style file: abntex2-alf.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Database file #1: abntex2-options.bib
+Database file #2: referencias.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 2 entries,
+            6714 wiz_defined-function locations,
+            1204 strings with 9522 characters,
+and the built_in function-call counts, 1758 in all, are:
+= -- 252
+> -- 41
+< -- 0
++ -- 62
+- -- 12
+* -- 103
+:= -- 292
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 17
+chr.to.int$ -- 2
+cite$ -- 1
+duplicate$ -- 37
+empty$ -- 106
+format.name$ -- 61
+if$ -- 414
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 29
+newline$ -- 13
+num.names$ -- 5
+pop$ -- 55
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 0
+skip$ -- 125
+stack$ -- 1
+substring$ -- 68
+swap$ -- 16
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 8
+width$ -- 0
+write$ -- 23

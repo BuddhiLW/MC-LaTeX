@@ -1,0 +1,118 @@
+\documentclass[12pt]{abntex2}
+\usepackage{times}
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{enumitem} %enumerate com (a), (b), (c); (I), (II), etc
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage[brazil]{babel}
+\pagestyle{empty}
+\usepackage[table]{xcolor}
+%% TITLE
+%% -----------------------------
+\title{Lista 2}
+\author{Milena Gomes da Silva\\ %% Student name
+  Minicurso \LaTeX \\ %% Code and course name
+  EEL - USP
+}
+
+\date{Junho, 2020} %% Change "\today" by another date manually
+%% -----------------------------
+%% -----------------------------
+height=0.65\textwidth
+%% %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\setlength{\droptitle}{-5em}
+\maketitle
+\thispagestyle{empty}
+% --------------------------
+% Start here
+% --------------------------
+
+% %%%%%%%%%%%%%%%%%%%
+
+\section*{Respostas}
+
+\subsection*{1.(a)}
+	\begin{equation}
+		\begin{cases}
+			\frac{{\mathrm d} x}{{\mathrm d}t} = \sigma(y-x) \\
+			\frac{{\mathrm d} y}{{\mathrm d}t} = x(\rho-z)-y \\
+			\frac{{\mathrm d} z}{{\mathrm d}t} = xy-\beta z
+		\end{cases}
+	\end{equation}
+
+\subsection*{1.(b)}
+\begin{equation}
+F(k)=\frac{1}{2\pi}\int_{-\infty}^{\infty}s(x){e^{-ikx}}\mathrm{d}x
+\end{equation}
+\subsection*{2.(a)}
+
+\begin{table}[!htb]
+
+	\IBGEtab{%
+		\caption{\centering{Parâmetros das peças de cobre}}%
+		\label{tab:ibge}
+	}{%
+
+		\begin{tabular}{ccccccc}
+			\toprule
+			Geometria & A(m^2) & V(m^3) & L_s$\mathrm{(m)}$ & \rho$\mathrm{(kg/m^3)}$ & c_p$\mathrm{(J/kgK)}$ & k_s$\mathrm{(W/mK)}$\\
+			\midrule \midrule
+			Placa & 0,0378 & 0,0002 & 0,0054 & 8930 & 386 & 398 \\
+			\midrule
+			Cilindro & 0,0280 & 0,0003 & 0,0107 & 8930 & 386 & 398 \\
+			\midrule
+			Esfera & 0,0082 & 0,00007 & 0,0085 & 8930 & 386 & 398 \\
+			\bottomrule
+		\end{tabular}%
+	}{%
+		\fonte{A autora.}%
+	}
+
+\end{table}
+\newpage
+\subsection*{2.(b)}
+ \begin{table}[htb]
+ \centering
+ \caption{\centering{Parâmetros das peças de cobre}}
+\begin{tabular}{|ccccccc|}
+
+\hline
+\rowcolor[rgb]{0.2,0.9,0.8}
+\hline
+ Geometria & A(m^2) & V(m^3) & L_s$\mathrm{(m)}$ & \rho$\mathrm{(kg/m^3)}$ & c_p$\mathrm{(J/kgK)}$ & k_s$\mathrm{(W/mK)}$ \\ \hline
+ \hline
+ \rowcolor[rgb]{0.7,0.9,0.8}
+ \hline
+Placa & 0,0378 & 0,0002 & 0,0054 & 8930 & 386 & 398 \\
+\hline
+\rowcolor[rgb]{0.7,0.9,0.8}
+\hline
+Cilindro & 0,0280 & 0,0003 & 0,0107 & 8930 & 386 & 398 \\
+\hline
+\rowcolor[rgb]{0.7,0.9,0.8}
+\hline
+Esfera & 0,0082 & 0,00007 & 0,0085 & 8930 & 386 & 398 \\
+\hline
+\end{tabular}
+\fonte{A autora.}
+\end{table}
+\newpage
+\begin{figure}[!htb]
+	\subsection*{(3)}
+	\begin{center}
+	\caption{\label{fig:2}Girassóis, Van Gogh}
+
+	\includegraphics[width=0.85\textwidth, height=0.65\textheight]{C:/Users/nili1/OneDrive/Favoritos/Documentos/LabEEL/LaTeX/Imagens/girassol}
+
+\legend{Fonte: National Gallery, 1888.}
+	\end{center}
+\end{figure}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

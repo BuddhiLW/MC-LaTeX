@@ -1,0 +1,46 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}
+\babel@toc {brazil}{}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdução}}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objetivo}{4}{section.1.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Revisão Bibliográfica}}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}O \LaTeX }{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Classe Canônica ABNT de produção científica}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}abnTeX}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}CTAN}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Beamer}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Tikz}{8}{section.2.6}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Materiais e Métodos}}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Sediação}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Definição dos temas}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Divulgação}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Carga horária}{13}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Plantões de Dúvida}{13}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Inscrição}{13}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Avaliação}{13}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Conclusão do Curso}{14}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Formulário de Satisfação}{14}{section.3.9}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Resultado e Discussões}}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Sediação}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Data}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Definição dos temas do minicurso}{16}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Produção do Material Integral}{16}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Temas}{16}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Divulgação}{17}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Carga horária}{17}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Plantões de Dúvidas}{17}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Inscrição}{17}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Avaliação}{17}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Conclusão do Curso}{18}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Participação dos Alunos}{18}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Formulário de Satisfação}{18}{section.4.10}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Conclusão}}{20}{chapter.5}%
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{21}{section*.4}%

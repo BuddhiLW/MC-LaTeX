@@ -1,0 +1,13 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Mariano 2001]{mariano2001impactos}
+\abntrefinfo{Mariano}{MARIANO}{2001}
+{MARIANO, J.~B. Impactos ambientais do refino de petr{\'o}leo.
+\emph{Rio de Janeiro (RJ): Universidade Federal do Rio de Janeiro}, 2001.}
+
+\end{thebibliography}

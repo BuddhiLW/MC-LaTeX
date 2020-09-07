@@ -1,0 +1,14 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Jackson e Bartek 2009]{jackson2009dna}
+\abntrefinfo{Jackson e Bartek}{JACKSON; BARTEK}{2009}
+{JACKSON, S.~P.; BARTEK, J. The dna-damage response in human biology and
+  disease.
+\emph{Nature}, Nature Publishing Group, v.~461, n.~7267, p.~1071, 2009.}
+
+\end{thebibliography}

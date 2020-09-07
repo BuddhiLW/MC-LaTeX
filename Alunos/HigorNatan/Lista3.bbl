@@ -1,0 +1,18 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Ferrer 2017]{ferrer2017}
+\abntrefinfo{Ferrer}{FERRER}{2017}
+{FERRER, N. [S.l.]: Rio Com Crianças, 2017.
+  \url{https://riocomcriancas.com.br/2017/06/07/planetario-orbita-shopping-metropolitano/}.}
+
+\bibitem[Greene 2019]{greene2019}
+\abntrefinfo{Greene}{GREENE}{2019}
+{GREENE, N. \emph{Meet the Scientist Who Wrote the Laws of Motion}. [S.l.]:
+  ThoughtCo., 2019.}
+
+\end{thebibliography}

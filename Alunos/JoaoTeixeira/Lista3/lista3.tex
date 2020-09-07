@@ -1,0 +1,55 @@
+\documentclass{beamer}
+
+%%%%Pacotes utilizados
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{tcolorbox}
+\usepackage[alf]{abntex2cite}
+%%%%Tema
+\usetheme{Copenhagen}
+\usecolortheme{whale}
+\usefonttheme{professionalfonts}
+
+%%%%Presets do frame primário
+\mode<presentation>
+
+
+\title{\textbf{Produção industrial de limões combustíveis}}
+
+\author{João Victor Teixeira \\
+  \text{\scriptsize{jvteixeira@usp.br}}}
+
+\date[EEL-USP]{\scriptsize{Apresentação Apperture Science} \\ Universidade de São Paulo - DEQUI}
+\begin{document}
+
+
+\pgfdeclareimage[height=\paperheight,width=\paperwidth]{myimage}{kemist.jpg}
+\usebackgroundtemplate{\tikz\node[opacity=0.3,inner sep=0] {\pgfuseimage{myimage}};}
+
+%%%%Frame primário configurado no preset
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%%%%Frame secundário
+\begin{frame}
+\frametitle{Aplicações e objetivos}
+
+\begin{tcolorbox}[colback=blue!7!white,colframe=blue!80!white,title=Possíveis utilidades]
+\begin{itemize}
+\item<3->[\ding{115}]{Demolição residencial}
+\item<1->[\ding{115}]{Explosão de tarefas do trabalho relativamente chatas}
+\item<2->[\ding{115}]{Queimaduras de terceiro grau em boletos atrasados}
+\item<4->[\ding{115}]{Maior confiabilidade no uso de combustível veicular do que qualquer posto de gasolina comum, \cite{combustible}}
+\end{itemize}
+\centering
+\includegraphics[scale=0.25]{lemons.png}
+
+\end{tcolorbox}
+
+\end{frame}
+\section{Referências}
+\bibliography{referencias}
+\end{document}
